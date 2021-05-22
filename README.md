@@ -1,8 +1,8 @@
 # inovvet
 O projeto **inovvet** foi elaborado com intuito de proporcionar a pratica de novos conceitos aprendidos através de livros e cursos online, muitos desses conceitos foram utilizados como base para outros projetos.
-O projeto abordado nesse repositório consiste em arquitetura distribuida de serviços.
+O projeto abordado nesse repositório consiste em arquitetura ***distribuida de serviços***.
 
-a finalidade era elaborar uma arquitetura distribuida, com objetivo de criar um ecosistema SaaS.
+a finalidade era elaborar uma arquitetura distribuida, com objetivo de criar um ecosistema **SaaS**.
 Com objetivo definido foi identificado a necessidade de criação das seguinte estrutura de software, para atender esse objetivo foi desenvolvido alguns micro serviços om os frameworks abaixo:
  - Spring
  - SpringBoot
