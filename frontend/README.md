@@ -8,13 +8,11 @@
 
 You can find the Github Repo here.
 
-[](cliente.png)
-[](produto.png)
-[](atendimento.png)
+![](cliente.png)
+![](produto.png)
+![](atendimento.png)
 
 
-
-## Useful Links
 
 More products from inovgestao: <http://www.inovvet.com.br/site>
 
