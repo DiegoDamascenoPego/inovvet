@@ -1,0 +1,55 @@
+.card-container {
+   min-height: 150px;
+}
+
+table {
+   width: 100%;
+   overflow: scroll;
+}
+
+tr.mat-header-row {
+   height: 40px !important;
+}
+
+.mat-header-cell {
+   font-size: 15px;
+   font-weight: 600px;
+}
+.mat-header-cell {
+   background-color: rgba(200, 200, 200, 0.2);
+}
+
+.mat-column-action {
+   max-width: 120px;
+   min-width: 120px;
+}
+
+.btn-width {
+   float: right;
+}
+
+.btn-grid {
+   padding: 10px;
+}
+
+.btn-grid-full {
+   padding: 5px;
+}
+
+.simple-text {
+   text-align: center;
+}
+
+.btn-image {
+   width: 24px;
+}
+
+.page-center {
+   margin: 0 auto;
+   width: 50%; /* Valor da Largura */
+   height: 80%;
+}
+
+body {
+   margin-bottom:50px;
+}

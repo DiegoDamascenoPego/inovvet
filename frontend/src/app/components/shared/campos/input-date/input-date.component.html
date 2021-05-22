@@ -1,0 +1,15 @@
+<div [formGroup]="formGroup">
+    <mat-form-field [hintLabel]="hLabel">
+        <input matInput 
+        [matDatepicker]="picker" 
+        [placeholder]="formTitle"
+        [id]="fControlName"
+        [formControlName]="fControlName"
+        [min]="minDate"
+        (dateChange)="onChangedate()">
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+       
+        <mat-datepicker touchUi #picker [startView]="getView()" [startAt]="startDate" ></mat-datepicker>
+    </mat-form-field>
+    <app-error-detail [control]="formControl"></app-error-detail>
+</div>

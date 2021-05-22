@@ -1,0 +1,19 @@
+<div class="container-fluid">
+   <div class="navbar-wrapper">
+      <div class="card" style="height: 400px;">
+         <div class="card-header card-header-icon card-header-danger">
+            <div class="card-icon">
+               <i class="material-icons">forward_to_inbox</i>
+            </div>
+         </div>
+         <div class="card-body text-center">
+            <h2 class="card-title ">{{mensagem.titulo}}</h2>
+            <h4>{{mensagem.tituloCentralizado}}</h4>
+            <span>{{mensagem.label}}</span><br>
+         </div>
+         <div class="card-body text-center">
+            <a [routerLink]="['/site']" class="btn btn-danger btn-round btn-outline-danger">inicio</a>
+         </div>
+      </div>
+   </div>
+</div>

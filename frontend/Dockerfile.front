@@ -1,0 +1,18 @@
+FROM node:14.15.0
+WORKDIR /var/www
+COPY package.json ./
+#### install angular cli
+RUN npm install -g @angular/cli
+
+RUN rm -rf node_modules/ && rm -rf package-lock.json && npm install 
+
+COPY . /var/www
+
+RUN npm run build:ssr
+
+EXPOSE 4000
+
+ENV NODE_ENV=production
+CMD npm run serve:ssr
+
+

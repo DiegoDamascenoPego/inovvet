@@ -1,0 +1,60 @@
+<app-master-form titulo="Cadastro de Produto">
+   <div class="content">
+      <div class="container-fluid">
+         <form [formGroup]="form" appFormValidator autocomplete="off" enctype="multipart/form-data">
+            <mat-tab-group #matgroup (selectedIndexChange)="changeTab($event)">
+               <mat-tab label="Dados cadastrais">
+                  <div class="card-body card-container">
+                     <div class="row">
+                        <app-input-text formTitle="Código" fControlName="id" [formGroup]="form" class="col-md-1">
+                        </app-input-text>
+                        <app-input-text formTitle="EAN" fControlName="ean" [formGroup]="form" disable="true"
+                           class="col-md-2" foco="true"></app-input-text>
+                        <app-input-text formTitle="Nome" fControlName="nome" [formGroup]="form" class="col-md-4">
+                        </app-input-text>
+                        <app-input-text formTitle="Descrição" fControlName="descricao" [formGroup]="form"
+                           class="col-md-5"></app-input-text>
+                     </div>
+                     <div class="row">
+                        <div class="col-md-6">
+                           <app-lista-classificacao [opcao]="classificacao"
+                              (changeAtualizar)="onChangeClassificacao($event)"></app-lista-classificacao>
+                        </div>
+                        <app-input-select-entity formTitle="Tipo" fControlName="tipo" [formGroup]="form"
+                           [opcoes]="tipos" class="col-md-3" (selected)="onChangeTipo($event)">
+                        </app-input-select-entity>
+
+                        <app-input-select-entity formTitle="Unidade" fControlName="unidade" [formGroup]="form"
+                           [opcoes]="unidades" class="col-md-3"></app-input-select-entity>
+
+                     </div>
+                     <div class="row">
+                        <div class="col-md-4">
+                           <app-pesquisa-marca [marca]="marca" (changeAtualizar)="onChangeMarca($event)">
+                           </app-pesquisa-marca>
+                        </div>
+
+                        <app-input-text formTitle="Observações" fControlName="observacao" [formGroup]="form"
+                           class="col-md-6"></app-input-text>
+                        <app-input-active fControlName="ativo" [formGroup]="form" class="col-md-2"></app-input-active>
+                     </div>
+                     <app-arquivo *ngIf="entity && entity.id > 0" [arquivos]="arquivos" [definicao]="definicaoArquivo"
+                        (changeAtualizar)="onChangeArquivos($event)"></app-arquivo>
+                  </div>
+               </mat-tab>
+               <mat-tab label="Preço">
+                  <app-cadastro-preco-form [precos]="precos" (Change)="onChangePreco($event)"></app-cadastro-preco-form>
+               </mat-tab>
+
+            </mat-tab-group>
+
+            <button mat-raised-button class="btn btn-link " (click)="share()" style="color: #3b5998;">
+               <i class="fa fa-facebook-square"></i> Compartilhar
+            </button>
+
+            <app-button-form [formGroup]="form" (save)="onSalvar()" (next)="onProximo(matgroup)" [isSave]="isSave"></app-button-form>
+
+         </form>
+      </div>
+   </div>
+</app-master-form>

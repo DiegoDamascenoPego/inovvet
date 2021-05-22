@@ -1,0 +1,15 @@
+<div [formGroup]="formGroup">
+    <mat-form-field>
+        <mat-label>Loja</mat-label>
+        <mat-select 
+        [id]="fControlName" 
+        [formControlName]="fControlName" 
+        [compareWith]="compareFn">
+            <mat-option *ngFor="let loja of lojas" [value]="loja">
+                {{loja.nomeFantasia}}
+            </mat-option>
+        </mat-select>
+    </mat-form-field>
+    <app-error-detail [control]="formControl"></app-error-detail>
+</div>
+

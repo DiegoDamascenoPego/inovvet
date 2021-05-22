@@ -1,0 +1,11 @@
+.simple-text {
+  padding: 2px 0 !important;
+}
+
+
+img{
+    width: 42px;
+    top: 13px;
+    left: 18px;
+    position: absolute;
+}

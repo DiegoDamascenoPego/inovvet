@@ -1,0 +1,68 @@
+<div class="main-content">
+   <div class="content">
+      <div class="container-fluid">
+         <div class="row  justify-content-center">
+            <div class="col-md-8">
+               <div class="container-fluid">
+                  <div class="navbar-wrapper">
+                     <div class="card" style="height: 500px;">
+                        <div class="card-header card-header-icon card-header-danger">
+                           <div class="card-icon">
+                              <i class="material-icons">person_add</i>
+                           </div>
+                        </div>
+                        <div class="card-body text-center">
+                           <h2>{{usuario.nome}}</h2>
+                           <h4 class="card-title ">{{labelTitulo}}</h4>
+                        </div>
+                        <div class="page-center">
+                           <form [formGroup]="form" appFormValidator autocomplete="off" *ngIf="usuario.nome != ''">
+                              <div class="card">
+                                 <div class="card-header  card-header-danger text-center">
+                                    Credenciais de Acesso
+                                 </div>
+                                 <div class="card-body container-fluid-form ">
+                                   
+                                    <div class="row">
+                                       <app-input-password 
+                                          hLabel="informe a senha"
+                                          fControlName="senha" 
+                                          [formGroup]="form" 
+                                          formTitle="Senha Confirmar"
+                                          class="col-md-12">
+                                       </app-input-password>
+                                    </div>
+                                    <div class="row">
+                                       <app-input-password 
+                                          hLabel="Confirme  a senha"
+                                          fControlName="senhaConfirmar" 
+                                          [formGroup]="form" 
+                                          formTitle="Confirme a Senha"
+                                          class="col-md-12">                                          
+                                       </app-input-password>                                      
+                                    </div>
+                                 </div>
+                              </div>
+
+                              <div class="card-body container-fluid-form">
+                                 <div class="card-action">
+                                    <button mat-raised-button type="submit" class="btn btn-success pull-right"
+                                       id="btnGravar"
+                                       [disabled]=" form.invalid"
+                                       (click)="onSalvar()">
+                                       Salvar
+                                    </button>
+                                 </div>
+                              </div>
+                           </form>
+                           <div class="text-center" *ngIf="usuario.nome == ''">
+                              <a href="/site/conta" class="btn btn-primary">Nova Conta</a>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>

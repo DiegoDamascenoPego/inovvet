@@ -1,0 +1,24 @@
+<app-master-form [titulo]="tituloPagina">
+   <div class="card-body">
+      <form [formGroup]="form" appFormValidator autocomplete="off">
+         <div class="row">
+            <app-input-text formTitle="Pesquise por Descrição /Código /EAN" fControlName="descricao" [formGroup]="form"
+               class="col-md-6"></app-input-text>
+
+            <app-input-select-entity formTitle="Tipo" fControlName="tipo" [formGroup]="form" [opcoes]="tipos"
+               class="col-md-4"></app-input-select-entity>
+            <app-input-active fControlName="ativo" [formGroup]="form" class="col-md-2"></app-input-active>
+         </div>
+         <div class="row">
+            
+            <div class="col-xs-12 col-md-4 ">
+               <app-button type="info" label="Pesquisar" align="default"  (cClick)="onPesquisar()"></app-button>
+            </div>
+         </div>
+      </form>
+   </div>
+   
+   <app-table [dataSource]="dataSource" [displayedColumns]="displayedColumns" (edit)="onEdit($event)" (delete)="onDelete($event.id, $event.nome)"
+      [pageIndex]="pageIndex" [pagelength]="pagelength" [pageSize]="pageSize" (page)="onPesquisar()"></app-table>
+
+</app-master-form>

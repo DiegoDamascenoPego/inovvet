@@ -1,0 +1,11 @@
+<div class="card-action">
+   <button *ngIf="isSave" mat-raised-button type="submit" class="btn btn-success pull-right" id="btnGravar"
+      [disabled]="formGroup.invalid" (click)="onSave()">
+      Salvar
+   </button>
+
+   <button [hidden]="isSave" mat-raised-button type="submit" #btnProximo class="btn btn-success pull-right"
+      id="btnPróximo" [disabled]="onValid()" (click)="onNext()">Próximo
+   </button>
+
+</div>

@@ -1,0 +1,57 @@
+a:link {
+    text-decoration: none;
+    color: inherit;
+  }
+  
+  a:visited {
+    text-decoration: none;
+    color: inherit;
+  }
+  
+
+
+  .navbar-top {
+    margin-bottom: 0px !important;
+}
+.sidenav {
+  height: 100%; /* 100% Full-height */
+  width: 0; /* 0 width - change this with JavaScript */
+  position: fixed; /* Stay in place */
+  z-index: 9999; /* Stay on top */
+  top: 0; /* Stay at the top */
+  background-color:white; 
+  overflow-x: hidden;
+  padding-top: 60px; 
+  transition: 0.5s; 
+  right: 0;
+}
+
+/* The navigation menu links */
+.sidenav a {
+  padding-top: 15px;
+  padding-bottom: 15px;
+  
+  text-decoration: none;
+  font-size: 12px;
+  font-weight: 500;
+  color: #3C4858;
+  text-transform: uppercase;
+  border-radius: 3px;
+  margin: 0 15px;
+  display: block;
+  transition: 0.3s;
+}
+
+/* When you mouse over the navigation links, change their color */
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+/* Position and style the close button (top right corner) */
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 100px;
+}

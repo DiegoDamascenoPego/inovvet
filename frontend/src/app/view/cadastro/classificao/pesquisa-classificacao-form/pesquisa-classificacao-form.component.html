@@ -1,0 +1,18 @@
+<app-master-form [titulo]="tituloPagina">
+   <div class="card-body">
+      <form [formGroup]="form" appFormValidator autocomplete="off">
+         <app-classificacao-filtro 
+         [departamentoFB]="departamentoFB" 
+         [categoriaFB]="categoriaFB" 
+         [grupoFB]="grupoFB"
+         [subgrupoFB]="subgrupoFB"></app-classificacao-filtro>      
+         <div class="row">
+            <app-button type="info" label="Pesquisar" align="default" (cClick)="onPesquisar()" class="col-xs-12 col-md-4 "></app-button>
+         </div>
+      </form>
+   </div>
+
+   <app-table [dataSource]="dataSource" [displayedColumns]="displayedColumns" (edit)="onEdit($event)" (delete)="onDelete($event.id,onDescricao($event))"
+         [pageIndex]="pageIndex" [pagelength]="pagelength" [pageSize]="pageSize" (page)="onPesquisar()"></app-table>
+
+</app-master-form>

@@ -1,0 +1,74 @@
+<app-master-form titulo="Cadastro de Loja">
+   <div class='content'>
+      <div class="container-fluid">
+         <form [formGroup]="form" appFormValidator autocomplete="off" novalidate (ngSubmit)="onSalvar()">
+            <mat-tab-group #matgroup>
+               <mat-tab label="Dados Cadastrais">
+                  <div class="card-body container-fluid-form">
+                     <div class="row">
+
+                        <app-input-text formTitle="Código" fControlName="id" [formGroup]="form" class="col-md-1">
+                        </app-input-text>
+
+                        <app-input-select formTitle="Tipo Documento" fControlName="tipoDocumento" [formGroup]="form"
+                           class="col-md-3" hLabel="Obrigatório" [opcoes]="opcoes"></app-input-select>
+
+                        <app-input-mask formTitle="CNPJ" fControlName="documento" [formGroup]="form" class="col-md-4"
+                           hLabel="Obrigatório" cText="tel" cMask="00.000.000/0000-00" foco="true"
+                           *ngIf="form.get('tipoDocumento')?.value == ISCNPJ">
+                        </app-input-mask>
+
+                        <app-input-mask formTitle="Inscrição Estadual" fControlName="ie" [formGroup]="form"
+                           class="col-md-4" hLabel="Obrigatório" cText="tel" cMask="000.000.000.000"
+                           *ngIf="form.get('tipoDocumento')?.value == ISCNPJ">
+                        </app-input-mask>
+
+                        <app-input-mask formTitle="CPF" fControlName="documento" [formGroup]="form" class="col-md-4"
+                           hLabel="Obrigatório" cText="tel" cMask="000.000.000-00" foco="true"
+                           *ngIf="form.get('tipoDocumento')?.value != ISCNPJ">
+                        </app-input-mask>
+
+                        <app-input-mask formTitle="RG" fControlName="ie" [formGroup]="form" class="col-md-4"
+                           hLabel="Obrigatório" cText="tel" cMask="00.000.000-0"
+                           *ngIf="form.get('tipoDocumento')?.value != ISCNPJ">
+                        </app-input-mask>
+
+                     </div>
+                     <div class="row">
+                        <app-input-text formTitle=" {{form.get('tipoDocumento')?.value != ISCNPJ? 'Nome Loja ': 'Nome Fantasia' }}"
+                           fControlName="nomeFantasia" [formGroup]="form" class="col-md-4" hLabel="Obrigatório" foco="true">
+                        </app-input-text>
+
+                        <app-input-text
+                           formTitle=" {{form.get('tipoDocumento')?.value != ISCNPJ? 'Nome ': 'Razão Social' }}"
+                           fControlName="razaoSocial" [formGroup]="form" class="col-md-8" hLabel="Obrigatório">
+                        </app-input-text>
+                     </div>
+                     <div class="row">
+                        <app-input-telefone formTitle="Telefone" fControlName="telefone" [formGroup]="form"
+                           class="col-md-4">
+                        </app-input-telefone>
+
+                        <app-input-text formTitle="Email" fControlName="email" [formGroup]="form" class="col-md-5">
+                        </app-input-text>
+
+                        <app-input-select formTitle="Tipo Loja" fControlName="tipoLoja" [formGroup]="form" class="col-md-3"
+                           hLabel="Obrigatório" [opcoes]="tipoLoja"></app-input-select>
+                     </div>
+                     <app-endereco [form]="form" [formControlCep]="form.get('endereco.cep')"
+                        [formControlCidade]="form.get('endereco.cidade')" [cadastroCompleto]="false"
+                        (changeEndereco)="atualizarEndereco($event)">
+                     </app-endereco>
+                     <div class="row">
+                        <app-input-active fControlName="ativo" [formGroup]="form" class="col-md-2">
+                        </app-input-active>
+                     </div>
+
+                  </div>
+               </mat-tab>
+            </mat-tab-group>
+            <app-button-save [formGroup]="form"></app-button-save>
+         </form>
+      </div>
+   </div>
+</app-master-form>

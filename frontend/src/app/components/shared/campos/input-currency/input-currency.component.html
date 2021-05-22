@@ -1,0 +1,19 @@
+<div [formGroup]="formGroup">
+    <mat-form-field [hintLabel]="hLabel">
+      <input 
+      matInput 
+      type="tel"
+      [placeholder]="formTitle" 
+      [matTooltip]="info"
+      [name]="fControlName" 
+      [formControlName]="fControlName"
+      class="text-right-align" 
+      currencyMask
+      (keyup)="changeValues()"
+      #ComponentFocusIn>    
+      <span matPrefix *ngIf="prefix !=='' ">{{prefix}}&nbsp;</span>
+      <span matSuffix *ngIf="suffix !=='' ">&nbsp;{{suffix}}</span>
+    </mat-form-field>    
+    <app-error-detail [control]="formControl"></app-error-detail>
+  </div>
+

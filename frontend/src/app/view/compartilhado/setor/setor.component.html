@@ -1,0 +1,21 @@
+<mat-form-field>
+  <input type="text" 
+  placeholder="Departamento" 
+  aria-label="Number" 
+  matInput [matAutocomplete]="auto"
+  id="inputDepartamento" 
+  [formControl]="searchControl" 
+  [(ngModel)]="value">
+  <mat-autocomplete autoActiveFirstOption 
+  #auto="matAutocomplete" [displayWith]="display"
+    (optionSelected)="onSelecionar($event.option.value)">
+    <mat-option *ngFor="let departamento of filteredOptions | async" [value]="departamento">
+      {{departamento.nome}}
+    </mat-option>
+  </mat-autocomplete>
+  <button type="button" mat-button class="btn btn-danger btn-link btn-fab btn-fab-mini btn-round" 
+  *ngIf="setor"
+    matSuffix mat-icon-button aria-label="Clear" 
+    (click)="clear()">
+    <i class="material-icons">clear</i>
+  </button>

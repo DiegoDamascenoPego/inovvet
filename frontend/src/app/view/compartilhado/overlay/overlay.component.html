@@ -1,0 +1,28 @@
+<!-- <div id="overlay" [ngClass]="{'display: block': show}" (click)="close();"></div>
+<div class="sidenav">
+
+  <button type="button" style="position: sticky; right: 1%; z-index: 3; top: 1%;" class="float-right close pr-1"
+    (click)="close();">
+    <span aria-hidden="true">&times;</span>
+  </button>
+
+
+  <div class="main-content">
+    <div class="container-fluid">
+      <ng-content></ng-content>
+    </div>
+  </div>
+
+
+</div> -->
+
+<div id="overlay" [ngClass]="{'active': show}">
+  
+      <button type="button" style="position: absolute; right: 1%; z-index: 3; top: 10%;" class="float-right close pr-1"
+         (click)="close();">
+         <span aria-hidden="true">&times;</span>
+      </button>
+
+      <ng-content></ng-content>
+   
+</div>

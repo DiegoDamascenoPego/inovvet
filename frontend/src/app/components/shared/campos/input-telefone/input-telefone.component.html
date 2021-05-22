@@ -1,0 +1,14 @@
+
+<div [formGroup]="formGroup">
+    <mat-form-field [hintLabel]="hLabel">
+      <input 
+      matInput 
+      [placeholder]="formTitle" 
+      type="text"
+      [name]="fControlName" 
+      dropSpecialCharacters="true" [mask]="cMask"
+      [formControl]="formGroup.get(fControlName)" 
+      #ComponentFocusIn>   
+    </mat-form-field>
+    <app-error-detail [control]="formControl"></app-error-detail>
+  </div>

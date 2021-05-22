@@ -1,0 +1,36 @@
+<div class="main-content">
+   <div class="container-fluid">
+      <div class="card">
+         <div class="card-header card-header-danger ">
+            <div class="nav-tabs-navigation">
+               <div class="nav-tabs-wrapper">
+                  <h4 class="card-title">{{titulo}}</h4>
+                  <ul class="nav nav-tabs pull-right">
+                     <li class="nav-item" *ngIf="!showOverlay">
+                        <a mat-button class="nav-link" [ngClass]="{'active': showCadastro}"
+                           [routerLink]="_pathCadastro">
+                           <i class="material-icons">add</i> Novo <div class="ripple-container"></div>
+                        </a>
+                     </li>
+                     <li class="nav-item" *ngIf="!showOverlay">
+                        <a mat-button class="nav-link" [ngClass]="{'active': showPesquisas}"
+                           [routerLink]="_pathGerenciador">
+                           <i class="material-icons">search</i> Pesquisar
+                           <div class="ripple-container"></div>
+                        </a>
+                     </li>
+                     <li class="nav-item" *ngIf="showOverlay">
+                        <a mat-button class="nav-link active" (click)="onVoltar()">
+                           <i class="material-icons">reply</i> Voltar
+                           <div class="ripple-container"></div>
+                        </a>
+                     </li>
+                  </ul>
+
+               </div>
+            </div>
+         </div>
+         <ng-content #content></ng-content>
+      </div>
+   </div>
+</div>

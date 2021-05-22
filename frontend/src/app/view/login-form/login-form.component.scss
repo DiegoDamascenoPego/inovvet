@@ -1,0 +1,33 @@
+.card {
+    top: 100px;
+}
+
+.row {
+    height: 100vh;
+}
+
+
+
+.background-page{
+    background-size: cover;
+    background-position: center center;   
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-color: #464646;
+    background-image: url("/assets/img/site-background.jpg"); 
+   
+}
+
+
+
+@media only screen and (max-width: 768px){
+.background-page{
+    background-size: cover;
+    background-position: center;   
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-color: #464646;
+    
+    background-image: url("/assets/img/site-background_3.jpg"); 
+}
+}

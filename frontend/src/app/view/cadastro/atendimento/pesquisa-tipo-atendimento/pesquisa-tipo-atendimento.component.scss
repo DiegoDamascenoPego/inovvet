@@ -1,0 +1,44 @@
+
+table {
+    width: 100%;
+    overflow: scroll;
+}
+.mat-header-cell {
+    font-size: 15px;
+    font-weight: 600px; 
+}
+
+.mat-column-id{
+    max-width: 30px;
+    min-width: 20px;
+}
+.mat-column-select{
+    max-width: 10px;
+}
+.mat-column-desricao{
+  min-width: 300px;
+}
+  
+.mat-column-action{
+  max-width: 120px;
+  min-width: 120px;
+}
+
+.btn-width{
+  float: right;
+}
+
+.btn-grid{
+  padding: 10px;
+
+}
+
+.mat-header-cell{
+  background-color: rgba(200, 200, 200, 0.2);
+}
+
+.simple-text{
+  text-align: center;
+}
+
+  

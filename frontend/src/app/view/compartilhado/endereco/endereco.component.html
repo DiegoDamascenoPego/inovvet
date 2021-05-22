@@ -1,0 +1,79 @@
+<div [formGroup]="form">
+   <div formGroupName="endereco">
+      <div class="row">
+         <input matInput placeholder="id" id="inputCodigo" formControlName="id" [hidden]="true" />
+         <div class="col-md-4">
+            <mat-form-field>               
+               <input matInput type="tel" placeholder="CEP" id="inputCep" [formControl]="formControlCep" #inputCep
+                  [dropSpecialCharacters]="true" mask="00000-000" />
+               <button mat-icon-button matSuffix (click)="buscarCep(inputCep.value)">
+                  <mat-icon>search</mat-icon>
+               </button>
+            </mat-form-field>
+         </div>
+         <div class="col-md-5">
+            <mat-form-field>
+               <input matInput placeholder="Rua" id="inputRua" formControlName="rua" />
+            </mat-form-field>
+         </div>
+         <div class="col-md-3">
+            <mat-form-field>
+               <input matInput placeholder="Número" id="inputNumero" formControlName="numero" #focoNumero />
+            </mat-form-field>
+         </div>
+      </div>
+      <div class="row">
+         <div class="col-md-4">
+            <mat-form-field>
+               <input matInput placeholder="Bairro" id="inputBairro" formControlName="bairro" />
+            </mat-form-field>
+         </div>
+         <div class="col-md-5">
+            <mat-form-field>
+               <input type="text" placeholder="Cidade" aria-label="Number" matInput [matAutocomplete]="autoCidade"
+                  id="inputCidade" [formControl]="formControlCidade" [(ngModel)]="valueCidade" />
+               <mat-autocomplete autoActiveFirstOption #autoCidade="matAutocomplete" [displayWith]="displayCidade">
+                  <mat-option *ngFor="let cidade of filtroCidade | async" [value]="cidade">
+                     {{ cidade.nome }}
+                  </mat-option>
+               </mat-autocomplete>
+               <button class="btn btn-danger btn-link" mat-icon-button matSuffix (click)="valueCidade = ''"
+                  *ngIf="valueCidade">
+                  <mat-icon>clear</mat-icon>
+               </button>
+               <button mat-icon-button matSuffix>
+                  <mat-icon>search</mat-icon>
+               </button>
+            </mat-form-field>
+         </div>
+         <div class="col-md-3">
+            <mat-form-field>
+               <mat-label>UF</mat-label>
+               <mat-select id="inputUF" formControlName="uf" [compareWith]="compareFnUF"
+                  (valueChange)="listarCidades($event)">
+                  <mat-option *ngFor="let opcao of estados" [value]="opcao">
+                     {{ opcao.nome }}
+                  </mat-option>
+               </mat-select>
+            </mat-form-field>
+         </div>
+      </div>
+      <div class="row">
+         <div class="col-md-4">
+            <mat-form-field>
+               <input matInput placeholder="Complemento" id="inputComplemento" formControlName="complemento" />
+            </mat-form-field>
+         </div>
+         <div class="col-md-4" *ngIf="cadastroCompleto">
+            <mat-form-field>
+               <mat-label>Tipo Endereço</mat-label>
+               <mat-select id="inputTipoEndereco" formControlName="tipo" [compareWith]="compareFn">
+                  <mat-option *ngFor="let opcao of tipos" [value]="opcao.value">
+                     {{opcao.name}}
+                  </mat-option>
+               </mat-select>
+            </mat-form-field>
+         </div>
+      </div>
+   </div>
+</div>

@@ -1,0 +1,8 @@
+<div [formGroup]="formGroup">
+    <mat-slide-toggle 
+    [id]=[fControlName] 
+    [formControlName]=[fControlName] 
+    #controlAtivo>
+        {{ controlAtivo.checked ? 'Ativo' : 'Inativo'}}
+    </mat-slide-toggle>
+</div>

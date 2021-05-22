@@ -1,0 +1,69 @@
+<div class="card-body">
+   <div class="row">
+      <div class="col-md-4">
+         <mat-form-field>
+            <mat-label>Tipo</mat-label>
+            <mat-select id="inputTipo" [(ngModel)]="telefone.tipo" #inputTipo>
+               <mat-option value="CELULAR">Celular</mat-option>
+               <mat-option value="RESIDENCIAL">Residencial</mat-option>
+            </mat-select>
+         </mat-form-field>
+      </div>
+      <div class="col-md-3">
+         <mat-form-field>
+            <input matInput [dropSpecialCharacters]="true"
+               mask="{{inputTipo && inputTipo.value === 'CELULAR' ? '(00)00000-0000' : '(00)0000-0000'}} " placeholder="telefone"
+               id="inputTelefone" [(ngModel)]="telefone.numero">
+         </mat-form-field>
+      </div>
+      <div class="col-md-4">
+         <mat-form-field>
+            <input matInput placeholder="Observação" id="inputObservacao" [(ngModel)]="telefone.observacao">
+         </mat-form-field>
+      </div>
+      <div class="col-md-1">
+         <span class="input-group-btn">
+            <button type="button" class="btn btn-fab btn-round btn-success" (click)="adicionar();">
+               <i class="material-icons">add</i>
+            </button>
+         </span>
+      </div>
+   </div>
+   <div class="card-body">
+      <div class="mat-elevation-z8 table-responsive">
+         <table mat-table [dataSource]="dataSource">
+
+            <ng-container matColumnDef="tipo">
+               <th mat-header-cell *matHeaderCellDef> <b>Tipo</b> </th>
+               <td mat-cell *matCellDef="let telefone"> {{telefone.tipo}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="numero">
+               <th mat-header-cell *matHeaderCellDef> <b>Número</b> </th>
+               <td mat-cell *matCellDef="let telefone">
+                  {{telefone.numero  |  mask: telefone.tipo === 'CELULAR' ? '(00)00000-0000' : '(00)0000-0000' }} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="observacao">
+               <th mat-header-cell *matHeaderCellDef> <b>Observação</b> </th>
+               <td mat-cell *matCellDef="let telefone"> {{telefone.observacao}} </td>
+            </ng-container>
+
+            <!-- Weight Column -->
+            <ng-container matColumnDef="action">
+               <th mat-header-cell *matHeaderCellDef> </th>
+               <td mat-cell *matCellDef="let telefone" class="td-actions text-right">
+                  <button type="button" class="btn btn-link  btn-warning btn-grid" (click)="editar(telefone)">
+                     <i class="material-icons">edit</i>
+                  </button>
+                  <button type="button" class="btn btn-link btn-danger btn-grid" (click)="remover(telefone)">
+                     <i class="material-icons">delete</i>
+                  </button>
+               </td>
+            </ng-container>
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+         </table>
+         <p class="simple-text" *ngIf="dataSource.data.length === 0">Nenhum registro encontrado...</p>
+      </div>
+   </div>

@@ -1,0 +1,62 @@
+<app-master-form titulo="Cadastro de Cliente" *ngIf="!showFormPets" (closeCadastro)="onVoltar()">
+   <div class="content">
+      <div class="container-fluid">
+         <form [formGroup]="form" appFormValidator autocomplete="off" novalidate>
+            <mat-tab-group #matgroup (selectedIndexChange)="changeTab($event)">
+               <mat-tab label="Dados Pessoais">
+                  <div class="card-body">
+                     <div class="row">
+                        <app-input-text formTitle="Código" fControlName="id" [formGroup]="form" class="col-sm-3 col-md-1">
+                        </app-input-text>
+                        <app-input-mask formTitle="CPF" fControlName="cpf" [formGroup]="form" class="col-md-3 "
+                           hLabel="Obrigatório" cText="tel" cMask="000.000.000-00" foco="true"></app-input-mask>
+                        <app-input-text formTitle="Nome" fControlName="nome" [formGroup]="form" class="col-md-4"
+                           hLabel="Obrigatório"></app-input-text>
+                        <app-input-select formTitle="Sexo" fControlName="sexo" [formGroup]="form" class="col-md-4"
+                           hLabel="Obrigatório" [opcoes]="generos"></app-input-select>
+                     </div>
+                     <div class="row">
+                        <app-input-date formTitle="Data Nascimento" fControlName="dataNascimento" [formGroup]="form"
+                           class="col-md-4" hLabel="Obrigatório" iniDateYear="true"></app-input-date>
+                        <app-input-text formTitle="email" fControlName="email" [formGroup]="form" class="col-md-8">
+                        </app-input-text>
+                     </div>
+                     <div class="row">
+                        <app-input-text formTitle="Observações" fControlName="observacao" [formGroup]="form"
+                           class="col-md-12"></app-input-text>
+                     </div>
+                     <div class="row">
+                        <app-input-active fControlName="ativo" [formGroup]="form" class="col-md-2"></app-input-active>
+                     </div>
+                  </div>
+               </mat-tab>
+               <mat-tab label="Endereços">
+                  <div class="card-body">
+                     <app-endereco [form]="form" [formControlCep]="form.get('endereco.cep')"
+                        (changeEndereco)="atualizarEndereco($event)" [formControlCidade]="form.get('endereco.cidade')">
+                     </app-endereco>
+                  </div>
+               </mat-tab>
+               <mat-tab label="Telefones">
+                  <app-telefone [listaTelefones]="telefones" (changeTelefone)="onUpdateTelefones($event)">
+                  </app-telefone>
+               </mat-tab>
+            </mat-tab-group>
+
+            <app-button-form [formGroup]="form" (save)="onSalvar()" 
+               (next)="onProximo(matgroup)" [isSave]="isSave" [validStateForm]="false">
+            </app-button-form>
+            <button mat-raised-button class="btn btn-rose" (click)="onShowCadastroPet()"
+               *ngIf="entity && entity.id > 0">
+               <i class="material-icons">favorite</i> Pets
+            </button>
+         </form>
+      </div>
+   </div>
+</app-master-form>
+
+<ng-template #overlay>
+   <app-cadastro-pet-form [clienteSelecionado]="entity" (closeCadastro)="onCloseCadastroPet()">
+   </app-cadastro-pet-form>
+</ng-template>
+

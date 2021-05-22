@@ -1,0 +1,19 @@
+
+<div [formGroup]="formGroup">
+    <mat-form-field [hintLabel]="hLabel">
+      <input 
+      matInput 
+      [placeholder]="formTitle" 
+      type="text"
+      [name]="fControlName" 
+      
+      dropSpecialCharacters="true" [mask]="cMask"
+      [formControl]="formGroup.controls[fControlName]" 
+      #ComponentFocusIn>
+      <button mat-icon-button matSuffix
+        (click)="onSearch(ComponentFocusIn.value)" *ngIf="search">
+        <mat-icon>search</mat-icon>
+    </button>      
+    </mat-form-field>
+    <app-error-detail [control]="formControl"></app-error-detail>
+  </div>

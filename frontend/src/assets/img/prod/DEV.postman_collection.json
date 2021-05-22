@@ -1,0 +1,3915 @@
+{
+	"info": {
+		"_postman_id": "ca45cdc6-cf08-401e-b500-28d335fb76b9",
+		"name": "DEV",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "PLATAFORMA",
+			"item": [
+				{
+					"name": "Animal",
+					"item": [
+						{
+							"name": "http://localhost:8080/animal/cor",
+							"request": {
+								"auth": {
+									"type": "oauth2",
+									"oauth2": [
+										{
+											"key": "accessToken",
+											"value": "29ae4081-b433-410a-a0f1-2eabb8e55dc4",
+											"type": "string"
+										},
+										{
+											"key": "tokenType",
+											"value": "bearer",
+											"type": "string"
+										},
+										{
+											"key": "addTokenTo",
+											"value": "header",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "token",
+										"value": "{{CONTA}}",
+										"type": "text"
+									},
+									{
+										"key": "seller-active",
+										"value": "{{SELLER}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://{{URL}}/animal/cor",
+									"protocol": "http",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"animal",
+										"cor"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "http://localhost:8080/animal",
+							"request": {
+								"auth": {
+									"type": "oauth2",
+									"oauth2": [
+										{
+											"key": "accessToken",
+											"value": "4e16bfbb-a924-498d-919e-cca491394298",
+											"type": "string"
+										},
+										{
+											"key": "tokenType",
+											"value": "bearer",
+											"type": "string"
+										},
+										{
+											"key": "addTokenTo",
+											"value": "header",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "token",
+										"value": "{{CONTA}}",
+										"type": "text"
+									},
+									{
+										"key": "seller-active",
+										"value": "{{SELLER}}",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n\t\"tipo\": \"CACHORRO\",\r\n\t\"clienteId\": \"1\",\r\n\t\"nome\":\"Rick\",\r\n\t\"sexo\": \"MASCULINO\",\r\n\t\"raca\":{\r\n\t\t\"id\": 22\r\n\t},\r\n\t\"cores\":[\r\n\t\"Preto\",\r\n\t\"Amarelo\"\r\n\t],\r\n\t\"castrado\": \"true\",\r\n\t\"pelo\": \"CURTO\",\r\n\t\"dataNascimento\": \"01/01/2019\"\r\n\t\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://{{URL}}/animal",
+									"protocol": "http",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"animal"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "http://localhost:8080/animal",
+							"request": {
+								"auth": {
+									"type": "oauth2",
+									"oauth2": [
+										{
+											"key": "accessToken",
+											"value": "4e16bfbb-a924-498d-919e-cca491394298",
+											"type": "string"
+										},
+										{
+											"key": "tokenType",
+											"value": "bearer",
+											"type": "string"
+										},
+										{
+											"key": "addTokenTo",
+											"value": "header",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [
+									{
+										"key": "token",
+										"type": "text",
+										"value": "{{CONTA}}"
+									},
+									{
+										"key": "seller-active",
+										"type": "text",
+										"value": "{{SELLER}}"
+									},
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n\t\"tipo\": \"GATO\",\r\n\t\"clienteId\": \"1\",\r\n\t\"nome\":\"Mila\",\r\n\t\"sexo\": \"FEMININO\",\r\n\t\"raca\":{\r\n\t\t\"id\": 44\r\n\t},\r\n\t\"cores\":[\r\n\t\"Branco\"\r\n\t],\r\n\t\"castrado\": \"true\",\r\n\t\"pelo\": \"CURTO\",\r\n\t\"dataNascimento\": \"01/01/2019\"\r\n\t\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://{{URL}}/animal/5",
+									"protocol": "http",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"animal",
+										"5"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "http://localhost:8080/animal",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "oauth2",
+									"oauth2": [
+										{
+											"key": "accessToken",
+											"value": "fe49e69b-20ef-4666-8f19-aee28388bff8",
+											"type": "string"
+										},
+										{
+											"key": "tokenType",
+											"value": "bearer",
+											"type": "string"
+										},
+										{
+											"key": "addTokenTo",
+											"value": "header",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "token",
+										"type": "text",
+										"value": "{{CONTA}}"
+									},
+									{
+										"key": "seller-active",
+										"type": "text",
+										"value": "{{SELLER}}"
+									},
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/x-www-form-urlencoded",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [],
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://{{URL}}/animal/11",
+									"protocol": "http",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"animal",
+										"11"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "http://localhost:8080/animal/filtrar",
+							"request": {
+								"auth": {
+									"type": "oauth2",
+									"oauth2": [
+										{
+											"key": "accessToken",
+											"value": "1e3a1c4b-c3e8-49e8-8c6d-8f2634f4d5ce",
+											"type": "string"
+										},
+										{
+											"key": "tokenType",
+											"value": "bearer",
+											"type": "string"
+										},
+										{
+											"key": "addTokenTo",
+											"value": "header",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "token",
+										"type": "text",
+										"value": "{{CONTA}}"
+									},
+									{
+										"key": "seller-active",
+										"type": "text",
+										"value": "{{SELLER}}"
+									},
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"obj\": {\n        \"cliente\": {\n            \"id\": 1\n        }\n    }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://{{URL}}/animal/filtrar",
+									"protocol": "http",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"animal",
+										"filtrar"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "CLIENTE",
+					"item": [
+						{
+							"name": "http://localhost:8080/cliente/filtrar",
+							"request": {
+								"auth": {
+									"type": "oauth2",
+									"oauth2": [
+										{
+											"key": "accessToken",
+											"value": "1e3a1c4b-c3e8-49e8-8c6d-8f2634f4d5ce",
+											"type": "string"
+										},
+										{
+											"key": "tokenType",
+											"value": "bearer",
+											"type": "string"
+										},
+										{
+											"key": "addTokenTo",
+											"value": "header",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "token",
+										"type": "text",
+										"value": "{{CONTA}}"
+									},
+									{
+										"key": "seller-active",
+										"type": "text",
+										"value": "{{SELLER}}"
+									},
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"nome\": \"Diego\"\n\t\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://{{URL}}/cliente/filtrar",
+									"protocol": "http",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"cliente",
+										"filtrar"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Servico",
+					"item": [
+						{
+							"name": "http://localhost:8080/servico",
+							"request": {
+								"auth": {
+									"type": "oauth2",
+									"oauth2": [
+										{
+											"key": "accessToken",
+											"value": "441a826b-0caa-4841-ba89-3b27469c2f4c",
+											"type": "string"
+										},
+										{
+											"key": "tokenType",
+											"value": "bearer",
+											"type": "string"
+										},
+										{
+											"key": "addTokenTo",
+											"value": "header",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "token",
+										"type": "text",
+										"value": "{{CONTA}}"
+									},
+									{
+										"key": "seller-active",
+										"type": "text",
+										"value": "{{SELLER}}"
+									},
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"nome\": \"Curativo\",\n    \"descricao\": \"Curativo\",\n    \"tempoExecucao\": 20,\n    \"permiteAgendamento\": \"true\",\n    \"departamento\": {\n        \"id\": 2\n    },\n    \"ativo\": \"true\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://{{URL}}/servico",
+									"protocol": "http",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"servico"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "http://localhost:8080/servico",
+							"request": {
+								"auth": {
+									"type": "oauth2",
+									"oauth2": [
+										{
+											"key": "accessToken",
+											"value": "441a826b-0caa-4841-ba89-3b27469c2f4c",
+											"type": "string"
+										},
+										{
+											"key": "tokenType",
+											"value": "bearer",
+											"type": "string"
+										},
+										{
+											"key": "addTokenTo",
+											"value": "header",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [
+									{
+										"key": "token",
+										"type": "text",
+										"value": "{{CONTA}}"
+									},
+									{
+										"key": "seller-active",
+										"type": "text",
+										"value": "{{SELLER}}"
+									},
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"nome\": \"Aplicação de Vacina\",\n    \"descricao\": \"Aplicação de Vacina\",\n    \"tempoExecucao\": 10,\n    \"permiteAgendamento\": \"true\",\n    \"departamento\": {\n        \"id\": 2\n    },\n    \"ativo\": \"true\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://{{URL}}/servico/7",
+									"protocol": "http",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"servico",
+										"7"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "http://localhost:8080/servico",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "oauth2",
+									"oauth2": [
+										{
+											"key": "accessToken",
+											"value": "14bc4391-1479-4cc3-8696-2309903a3e00",
+											"type": "string"
+										},
+										{
+											"key": "tokenType",
+											"value": "bearer",
+											"type": "string"
+										},
+										{
+											"key": "addTokenTo",
+											"value": "header",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "token",
+										"type": "text",
+										"value": "{{CONTA}}"
+									},
+									{
+										"key": "seller-active",
+										"type": "text",
+										"value": "{{SELLER}}"
+									},
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://{{URL}}/servico/10",
+									"protocol": "http",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"servico",
+										"10"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "http://localhost:8080/servico",
+							"request": {
+								"auth": {
+									"type": "oauth2",
+									"oauth2": [
+										{
+											"key": "accessToken",
+											"value": "441a826b-0caa-4841-ba89-3b27469c2f4c",
+											"type": "string"
+										},
+										{
+											"key": "tokenType",
+											"value": "bearer",
+											"type": "string"
+										},
+										{
+											"key": "addTokenTo",
+											"value": "header",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "token",
+										"type": "text",
+										"value": "{{CONTA}}"
+									},
+									{
+										"key": "seller-active",
+										"type": "text",
+										"value": "{{SELLER}}"
+									},
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://{{URL}}/servico/6",
+									"protocol": "http",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"servico",
+										"6"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "http://localhost:8080/servico/filtrar",
+							"request": {
+								"auth": {
+									"type": "oauth2",
+									"oauth2": [
+										{
+											"key": "accessToken",
+											"value": "a921795e-37cb-4d2c-a43c-60de434c8b67",
+											"type": "string"
+										},
+										{
+											"key": "tokenType",
+											"value": "bearer",
+											"type": "string"
+										},
+										{
+											"key": "addTokenTo",
+											"value": "header",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "token",
+										"type": "text",
+										"value": "{{CONTA}}"
+									},
+									{
+										"key": "seller-active",
+										"type": "text",
+										"value": "{{SELLER}}"
+									},
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"obj\": {\n        \"nome\": \"\",\n        \"seguimento\": {\n            \"id\": 2\n        },\n        \"ativo\": true\n    }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://{{URL}}/servico/filtrar",
+									"protocol": "http",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"servico",
+										"filtrar"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Setor",
+					"item": [
+						{
+							"name": "http://localhost:8080/departamento",
+							"request": {
+								"auth": {
+									"type": "oauth2",
+									"oauth2": [
+										{
+											"key": "accessToken",
+											"value": "16a0556e-ec5d-4ed5-98a2-60ff62eebad2",
+											"type": "string"
+										},
+										{
+											"key": "tokenType",
+											"value": "bearer",
+											"type": "string"
+										},
+										{
+											"key": "addTokenTo",
+											"value": "header",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "token",
+										"type": "text",
+										"value": "{{CONTA}}"
+									},
+									{
+										"key": "seller-active",
+										"type": "text",
+										"value": "{{SELLER}}"
+									},
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n\t\"nome\": \"Loja Animal\"\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://{{URL}}/setor",
+									"protocol": "http",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"setor"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "http://localhost:8080/departamento/",
+							"request": {
+								"auth": {
+									"type": "oauth2",
+									"oauth2": [
+										{
+											"key": "accessToken",
+											"value": "16a0556e-ec5d-4ed5-98a2-60ff62eebad2",
+											"type": "string"
+										},
+										{
+											"key": "tokenType",
+											"value": "bearer",
+											"type": "string"
+										},
+										{
+											"key": "addTokenTo",
+											"value": "header",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "token",
+										"type": "text",
+										"value": "{{CONTA}}"
+									},
+									{
+										"key": "seller-active",
+										"type": "text",
+										"value": "{{SELLER}}"
+									}
+								],
+								"url": {
+									"raw": "http://{{URL}}/setor/3",
+									"protocol": "http",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"setor",
+										"3"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "http://localhost:8080/departamento",
+							"request": {
+								"auth": {
+									"type": "oauth2",
+									"oauth2": [
+										{
+											"key": "accessToken",
+											"value": "16a0556e-ec5d-4ed5-98a2-60ff62eebad2",
+											"type": "string"
+										},
+										{
+											"key": "tokenType",
+											"value": "bearer",
+											"type": "string"
+										},
+										{
+											"key": "addTokenTo",
+											"value": "header",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "token",
+										"type": "text",
+										"value": "{{CONTA}}"
+									},
+									{
+										"key": "seller-active",
+										"type": "text",
+										"value": "{{SELLER}}"
+									}
+								],
+								"url": {
+									"raw": "http://{{URL}}/setor/4",
+									"protocol": "http",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"setor",
+										"4"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "http://localhost:8080/departamento/listar",
+							"request": {
+								"auth": {
+									"type": "oauth2",
+									"oauth2": [
+										{
+											"key": "accessToken",
+											"value": "c587dd05-f377-4d52-a7e9-2f6af3cc14f4",
+											"type": "string"
+										},
+										{
+											"key": "tokenType",
+											"value": "bearer",
+											"type": "string"
+										},
+										{
+											"key": "addTokenTo",
+											"value": "header",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "token",
+										"type": "text",
+										"value": "{{CONTA}}"
+									},
+									{
+										"key": "seller-active",
+										"type": "text",
+										"value": "{{SELLER}}"
+									}
+								],
+								"url": {
+									"raw": "http://{{URL}}/departamento?nome=a",
+									"protocol": "http",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"departamento"
+									],
+									"query": [
+										{
+											"key": "nome",
+											"value": "a"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Seguimento",
+					"item": [
+						{
+							"name": "http://localhost:8080/seguimento",
+							"request": {
+								"auth": {
+									"type": "oauth2",
+									"oauth2": [
+										{
+											"key": "accessToken",
+											"value": "16a0556e-ec5d-4ed5-98a2-60ff62eebad2",
+											"type": "string"
+										},
+										{
+											"key": "tokenType",
+											"value": "bearer",
+											"type": "string"
+										},
+										{
+											"key": "addTokenTo",
+											"value": "header",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "token",
+										"type": "text",
+										"value": "{{CONTA}}"
+									},
+									{
+										"key": "seller-active",
+										"type": "text",
+										"value": "{{SELLER}}"
+									}
+								],
+								"url": {
+									"raw": "http://{{URL}}/seguimento/all",
+									"protocol": "http",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"seguimento",
+										"all"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Preco",
+					"item": [
+						{
+							"name": "http://localhost:8080/preco/calcular",
+							"request": {
+								"auth": {
+									"type": "oauth2",
+									"oauth2": [
+										{
+											"key": "accessToken",
+											"value": "13add931-049d-492e-9f6d-aea5ceb54d19",
+											"type": "string"
+										},
+										{
+											"key": "tokenType",
+											"value": "bearer",
+											"type": "string"
+										},
+										{
+											"key": "addTokenTo",
+											"value": "header",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "token",
+										"type": "text",
+										"value": "{{CONTA}}"
+									},
+									{
+										"key": "seller-active",
+										"type": "text",
+										"value": "{{SELLER}}"
+									},
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://{{URL}}/preco/calcular?custo=15.87&despesaAdicional=10.93&tipoCalculo=CUSTO&margemLucro=16&preco=0",
+									"protocol": "http",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"preco",
+										"calcular"
+									],
+									"query": [
+										{
+											"key": "custo",
+											"value": "15.87"
+										},
+										{
+											"key": "despesaAdicional",
+											"value": "10.93"
+										},
+										{
+											"key": "tipoCalculo",
+											"value": "CUSTO"
+										},
+										{
+											"key": "margemLucro",
+											"value": "16"
+										},
+										{
+											"key": "preco",
+											"value": "0"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Departamento",
+					"item": [
+						{
+							"name": "http://{{URL}}/departamento",
+							"request": {
+								"auth": {
+									"type": "oauth2",
+									"oauth2": [
+										{
+											"key": "accessToken",
+											"value": "ed6319bf-1bc5-4638-8899-b2c7b419db09",
+											"type": "string"
+										},
+										{
+											"key": "tokenType",
+											"value": "bearer",
+											"type": "string"
+										},
+										{
+											"key": "addTokenTo",
+											"value": "header",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "token",
+										"value": "{{CONTA}}",
+										"type": "text"
+									},
+									{
+										"key": "seller-active",
+										"value": "{{SELLER}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"nome\" :\"Higiene e Beleza\",\n\t\"ativo\": true,\n\t\"seguimento\":{\n\t\t\"id\": 1\n\t}\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://{{URL}}/departamento/",
+									"protocol": "http",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"departamento",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "http://{{URL}}/departamento",
+							"request": {
+								"auth": {
+									"type": "oauth2",
+									"oauth2": [
+										{
+											"key": "accessToken",
+											"value": "1aa85521-4ea0-43da-8407-d5e69ced3874",
+											"type": "string"
+										},
+										{
+											"key": "tokenType",
+											"value": "bearer",
+											"type": "string"
+										},
+										{
+											"key": "addTokenTo",
+											"value": "header",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [
+									{
+										"key": "token",
+										"value": "{{CONTA}}",
+										"type": "text"
+									},
+									{
+										"key": "seller-active",
+										"value": "{{SELLER}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"nome\" :\"Higiene e Beleza\",\n\t\"ativo\": true,\n\t\"seguimento\":{\n\t\t\"id\": 3\n\t}\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://{{URL}}/departamento/3",
+									"protocol": "http",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"departamento",
+										"3"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "http://{{URL}}/departamento",
+							"request": {
+								"auth": {
+									"type": "oauth2",
+									"oauth2": [
+										{
+											"key": "accessToken",
+											"value": "ed6319bf-1bc5-4638-8899-b2c7b419db09",
+											"type": "string"
+										},
+										{
+											"key": "tokenType",
+											"value": "bearer",
+											"type": "string"
+										},
+										{
+											"key": "addTokenTo",
+											"value": "header",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "token",
+										"type": "text",
+										"value": "{{CONTA}}"
+									},
+									{
+										"key": "seller-active",
+										"type": "text",
+										"value": "{{SELLER}}"
+									}
+								],
+								"url": {
+									"raw": "http://{{URL}}/departamento/2",
+									"protocol": "http",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"departamento",
+										"2"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "http://{{URL}}/departamento/filtrar",
+							"request": {
+								"auth": {
+									"type": "oauth2",
+									"oauth2": [
+										{
+											"key": "accessToken",
+											"value": "1aa85521-4ea0-43da-8407-d5e69ced3874",
+											"type": "string"
+										},
+										{
+											"key": "tokenType",
+											"value": "bearer",
+											"type": "string"
+										},
+										{
+											"key": "addTokenTo",
+											"value": "header",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "token",
+										"type": "text",
+										"value": "{{CONTA}}"
+									},
+									{
+										"key": "seller-active",
+										"type": "text",
+										"value": "{{SELLER}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"obj\": {\n        \"nome\": \"\",\n       \n        \"ativo\": true,\n        \"seguimento\": {\n            \"id\": 3\n        }\n    }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://{{URL}}/departamento/filtrar",
+									"protocol": "http",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"departamento",
+										"filtrar"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "http://{{URL}}/departamento/listar",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "oauth2",
+									"oauth2": [
+										{
+											"key": "accessToken",
+											"value": "ed6319bf-1bc5-4638-8899-b2c7b419db09",
+											"type": "string"
+										},
+										{
+											"key": "tokenType",
+											"value": "bearer",
+											"type": "string"
+										},
+										{
+											"key": "addTokenTo",
+											"value": "header",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "token",
+										"type": "text",
+										"value": "{{CONTA}}"
+									},
+									{
+										"key": "seller-active",
+										"type": "text",
+										"value": "{{SELLER}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n      \"id\": 1\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://{{URL}}/departamento/listar",
+									"protocol": "http",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"departamento",
+										"listar"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"auth": {
+						"type": "oauth2",
+						"oauth2": [
+							{
+								"key": "accessToken",
+								"value": "a921795e-37cb-4d2c-a43c-60de434c8b67",
+								"type": "string"
+							},
+							{
+								"key": "tokenType",
+								"value": "bearer",
+								"type": "string"
+							},
+							{
+								"key": "addTokenTo",
+								"value": "header",
+								"type": "string"
+							}
+						]
+					},
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Categoria",
+					"item": [
+						{
+							"name": "http://{{URL}}/categoria",
+							"request": {
+								"auth": {
+									"type": "oauth2",
+									"oauth2": [
+										{
+											"key": "accessToken",
+											"value": "1aa85521-4ea0-43da-8407-d5e69ced3874",
+											"type": "string"
+										},
+										{
+											"key": "tokenType",
+											"value": "bearer",
+											"type": "string"
+										},
+										{
+											"key": "addTokenTo",
+											"value": "header",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "token",
+										"value": "{{CONTA}}",
+										"type": "text"
+									},
+									{
+										"key": "seller-active",
+										"value": "{{SELLER}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"nome\": \"Gato\",\n    \"ativo\": true\n   \n    \n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://{{URL}}/categoria/",
+									"protocol": "http",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"categoria",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "http://{{URL}}/categoria",
+							"request": {
+								"auth": {
+									"type": "oauth2",
+									"oauth2": [
+										{
+											"key": "accessToken",
+											"value": "64d915d2-740e-4fe6-afa8-ef5cc51bf161",
+											"type": "string"
+										},
+										{
+											"key": "tokenType",
+											"value": "bearer",
+											"type": "string"
+										},
+										{
+											"key": "addTokenTo",
+											"value": "header",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [
+									{
+										"key": "token",
+										"value": "{{CONTA}}",
+										"type": "text"
+									},
+									{
+										"key": "seller-active",
+										"value": "{{SELLER}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"nome\" :\"Gato\",\n\t\"ativo\": true,\n\t\"departamentos\":[\n\t{\n\t\t\"id\": 1\n\t},\n\t{\n\t\t\"id\": 2\n\t},\n\t{\n\t\t\"id\": 3\n\t}\n\t]\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://{{URL}}/categoria/1",
+									"protocol": "http",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"categoria",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "http://{{URL}}/categoria",
+							"request": {
+								"auth": {
+									"type": "oauth2",
+									"oauth2": [
+										{
+											"key": "accessToken",
+											"value": "c3f85ceb-c5f2-4091-9759-53d9798f0e1a",
+											"type": "string"
+										},
+										{
+											"key": "tokenType",
+											"value": "bearer",
+											"type": "string"
+										},
+										{
+											"key": "addTokenTo",
+											"value": "header",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "token",
+										"type": "text",
+										"value": "{{CONTA}}"
+									},
+									{
+										"key": "seller-active",
+										"type": "text",
+										"value": "{{SELLER}}"
+									}
+								],
+								"url": {
+									"raw": "http://{{URL}}/categoria/1",
+									"protocol": "http",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"categoria",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "http://{{URL}}/departamento/filtrar",
+							"request": {
+								"auth": {
+									"type": "oauth2",
+									"oauth2": [
+										{
+											"key": "accessToken",
+											"value": "1aa85521-4ea0-43da-8407-d5e69ced3874",
+											"type": "string"
+										},
+										{
+											"key": "tokenType",
+											"value": "bearer",
+											"type": "string"
+										},
+										{
+											"key": "addTokenTo",
+											"value": "header",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "token",
+										"type": "text",
+										"value": "{{CONTA}}"
+									},
+									{
+										"key": "seller-active",
+										"type": "text",
+										"value": "{{SELLER}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"obj\": {\n        \"nome\": \"\",\n       \n        \"ativo\": true,\n        \"departamento\": {\n            \"id\": 1\n        }\n    }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://{{URL}}/categoria/filtrar",
+									"protocol": "http",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"categoria",
+										"filtrar"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "http://{{URL}}/categoria/listar",
+							"request": {
+								"auth": {
+									"type": "oauth2",
+									"oauth2": [
+										{
+											"key": "accessToken",
+											"value": "c3f85ceb-c5f2-4091-9759-53d9798f0e1a",
+											"type": "string"
+										},
+										{
+											"key": "tokenType",
+											"value": "bearer",
+											"type": "string"
+										},
+										{
+											"key": "addTokenTo",
+											"value": "header",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "token",
+										"type": "text",
+										"value": "{{CONTA}}"
+									},
+									{
+										"key": "seller-active",
+										"type": "text",
+										"value": "{{SELLER}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n      \"id\": 4\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://{{URL}}/categoria/listar",
+									"protocol": "http",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"categoria",
+										"listar"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"auth": {
+						"type": "oauth2",
+						"oauth2": [
+							{
+								"key": "accessToken",
+								"value": "a921795e-37cb-4d2c-a43c-60de434c8b67",
+								"type": "string"
+							},
+							{
+								"key": "tokenType",
+								"value": "bearer",
+								"type": "string"
+							},
+							{
+								"key": "addTokenTo",
+								"value": "header",
+								"type": "string"
+							}
+						]
+					},
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "89160880-77a0-44b1-bc89-5d9b98d0172d",
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"id": "a85fb72b-b36d-4732-bf22-b15675f5027a",
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Grupo",
+					"item": [
+						{
+							"name": "http://{{URL}}/grupo",
+							"request": {
+								"auth": {
+									"type": "oauth2",
+									"oauth2": [
+										{
+											"key": "accessToken",
+											"value": "1aa85521-4ea0-43da-8407-d5e69ced3874",
+											"type": "string"
+										},
+										{
+											"key": "tokenType",
+											"value": "bearer",
+											"type": "string"
+										},
+										{
+											"key": "addTokenTo",
+											"value": "header",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "token",
+										"value": "{{CONTA}}",
+										"type": "text"
+									},
+									{
+										"key": "seller-active",
+										"value": "{{SELLER}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"nome\" :\"Petisco\",\n\t\"ativo\": true\n\t\t\n\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://{{URL}}/grupo/",
+									"protocol": "http",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"grupo",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "http://{{URL}}/grupo",
+							"request": {
+								"auth": {
+									"type": "oauth2",
+									"oauth2": [
+										{
+											"key": "accessToken",
+											"value": "1aa85521-4ea0-43da-8407-d5e69ced3874",
+											"type": "string"
+										},
+										{
+											"key": "tokenType",
+											"value": "bearer",
+											"type": "string"
+										},
+										{
+											"key": "addTokenTo",
+											"value": "header",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [
+									{
+										"key": "token",
+										"value": "{{CONTA}}",
+										"type": "text"
+									},
+									{
+										"key": "seller-active",
+										"value": "{{SELLER}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"nome\" :\"Petisco\",\n\t\"ativo\": true\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://{{URL}}/grupo/1",
+									"protocol": "http",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"grupo",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "http://{{URL}}/grupo",
+							"request": {
+								"auth": {
+									"type": "oauth2",
+									"oauth2": [
+										{
+											"key": "accessToken",
+											"value": "a921795e-37cb-4d2c-a43c-60de434c8b67",
+											"type": "string"
+										},
+										{
+											"key": "tokenType",
+											"value": "bearer",
+											"type": "string"
+										},
+										{
+											"key": "addTokenTo",
+											"value": "header",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "token",
+										"type": "text",
+										"value": "{{CONTA}}"
+									},
+									{
+										"key": "seller-active",
+										"type": "text",
+										"value": "{{SELLER}}"
+									}
+								],
+								"url": {
+									"raw": "http://{{URL}}/grupo/1",
+									"protocol": "http",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"grupo",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "http://{{URL}}/grupo/filtrar",
+							"request": {
+								"auth": {
+									"type": "oauth2",
+									"oauth2": [
+										{
+											"key": "accessToken",
+											"value": "1aa85521-4ea0-43da-8407-d5e69ced3874",
+											"type": "string"
+										},
+										{
+											"key": "tokenType",
+											"value": "bearer",
+											"type": "string"
+										},
+										{
+											"key": "addTokenTo",
+											"value": "header",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "token",
+										"type": "text",
+										"value": "{{CONTA}}"
+									},
+									{
+										"key": "seller-active",
+										"type": "text",
+										"value": "{{SELLER}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"obj\": {\n        \"nome\": \"\",\n       \n        \"ativo\": true,\n        \"categoria\": {\n            \"id\": 1\n        }\n    }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://{{URL}}/grupo/filtrar",
+									"protocol": "http",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"grupo",
+										"filtrar"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "http://{{URL}}/grupo/listar",
+							"request": {
+								"auth": {
+									"type": "oauth2",
+									"oauth2": [
+										{
+											"key": "accessToken",
+											"value": "64d915d2-740e-4fe6-afa8-ef5cc51bf161",
+											"type": "string"
+										},
+										{
+											"key": "tokenType",
+											"value": "bearer",
+											"type": "string"
+										},
+										{
+											"key": "addTokenTo",
+											"value": "header",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "token",
+										"type": "text",
+										"value": "{{CONTA}}"
+									},
+									{
+										"key": "seller-active",
+										"type": "text",
+										"value": "{{SELLER}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n      \"id\": 1\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://{{URL}}/grupo/listar",
+									"protocol": "http",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"grupo",
+										"listar"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"auth": {
+						"type": "oauth2",
+						"oauth2": [
+							{
+								"key": "accessToken",
+								"value": "a921795e-37cb-4d2c-a43c-60de434c8b67",
+								"type": "string"
+							},
+							{
+								"key": "tokenType",
+								"value": "bearer",
+								"type": "string"
+							},
+							{
+								"key": "addTokenTo",
+								"value": "header",
+								"type": "string"
+							}
+						]
+					},
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "SubGrupo",
+					"item": [
+						{
+							"name": "http://{{URL}}/grupo",
+							"request": {
+								"auth": {
+									"type": "oauth2",
+									"oauth2": [
+										{
+											"key": "accessToken",
+											"value": "1aa85521-4ea0-43da-8407-d5e69ced3874",
+											"type": "string"
+										},
+										{
+											"key": "tokenType",
+											"value": "bearer",
+											"type": "string"
+										},
+										{
+											"key": "addTokenTo",
+											"value": "header",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "token",
+										"value": "{{CONTA}}",
+										"type": "text"
+									},
+									{
+										"key": "seller-active",
+										"value": "{{SELLER}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"nome\" :\"testss\",\n\t\"ativo\": true\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://{{URL}}/subgrupo/",
+									"protocol": "http",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"subgrupo",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "http://{{URL}}/grupo",
+							"request": {
+								"auth": {
+									"type": "oauth2",
+									"oauth2": [
+										{
+											"key": "accessToken",
+											"value": "1aa85521-4ea0-43da-8407-d5e69ced3874",
+											"type": "string"
+										},
+										{
+											"key": "tokenType",
+											"value": "bearer",
+											"type": "string"
+										},
+										{
+											"key": "addTokenTo",
+											"value": "header",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [
+									{
+										"key": "token",
+										"value": "{{CONTA}}",
+										"type": "text"
+									},
+									{
+										"key": "seller-active",
+										"value": "{{SELLER}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"nome\" :\"Bebidas\",\n\t\"ativo\": true\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://{{URL}}/subgrupo/5",
+									"protocol": "http",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"subgrupo",
+										"5"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "http://{{URL}}/grupo",
+							"request": {
+								"auth": {
+									"type": "oauth2",
+									"oauth2": [
+										{
+											"key": "accessToken",
+											"value": "a921795e-37cb-4d2c-a43c-60de434c8b67",
+											"type": "string"
+										},
+										{
+											"key": "tokenType",
+											"value": "bearer",
+											"type": "string"
+										},
+										{
+											"key": "addTokenTo",
+											"value": "header",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "token",
+										"type": "text",
+										"value": "{{CONTA}}"
+									},
+									{
+										"key": "seller-active",
+										"type": "text",
+										"value": "{{SELLER}}"
+									}
+								],
+								"url": {
+									"raw": "http://{{URL}}/grupo/1",
+									"protocol": "http",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"grupo",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "http://{{URL}}/grupo/filtrar",
+							"request": {
+								"auth": {
+									"type": "oauth2",
+									"oauth2": [
+										{
+											"key": "accessToken",
+											"value": "1aa85521-4ea0-43da-8407-d5e69ced3874",
+											"type": "string"
+										},
+										{
+											"key": "tokenType",
+											"value": "bearer",
+											"type": "string"
+										},
+										{
+											"key": "addTokenTo",
+											"value": "header",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "token",
+										"type": "text",
+										"value": "{{CONTA}}"
+									},
+									{
+										"key": "seller-active",
+										"type": "text",
+										"value": "{{SELLER}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"obj\": {\n        \"nome\": \"\",\n       \n        \"ativo\": true,\n        \"categoria\": {\n            \"id\": 1\n        }\n    }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://{{URL}}/subgrupo/filtrar",
+									"protocol": "http",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"subgrupo",
+										"filtrar"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "http://{{URL}}/grupo/listar",
+							"request": {
+								"auth": {
+									"type": "oauth2",
+									"oauth2": [
+										{
+											"key": "accessToken",
+											"value": "f00bcd5d-61bd-4b18-a004-25a28510f164",
+											"type": "string"
+										},
+										{
+											"key": "tokenType",
+											"value": "bearer",
+											"type": "string"
+										},
+										{
+											"key": "addTokenTo",
+											"value": "header",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "token",
+										"type": "text",
+										"value": "{{CONTA}}"
+									},
+									{
+										"key": "seller-active",
+										"type": "text",
+										"value": "{{SELLER}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n      \"id\": 1\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://{{URL}}/grupo/listar",
+									"protocol": "http",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"grupo",
+										"listar"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"auth": {
+						"type": "oauth2",
+						"oauth2": [
+							{
+								"key": "accessToken",
+								"value": "a921795e-37cb-4d2c-a43c-60de434c8b67",
+								"type": "string"
+							},
+							{
+								"key": "tokenType",
+								"value": "bearer",
+								"type": "string"
+							},
+							{
+								"key": "addTokenTo",
+								"value": "header",
+								"type": "string"
+							}
+						]
+					},
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "classificacao",
+					"item": [
+						{
+							"name": "http://{{URL}}/classificacao",
+							"request": {
+								"auth": {
+									"type": "oauth2",
+									"oauth2": [
+										{
+											"key": "accessToken",
+											"value": "57cc10ad-a721-40f3-906e-1e9404723db7",
+											"type": "string"
+										},
+										{
+											"key": "tokenType",
+											"value": "bearer",
+											"type": "string"
+										},
+										{
+											"key": "addTokenTo",
+											"value": "header",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "token",
+										"type": "text",
+										"value": "{{CONTA}}"
+									},
+									{
+										"key": "seller-active",
+										"type": "text",
+										"value": "{{SELLER}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"departamento\": {\n        \"id\": 1\n    },\n    \"categoria\": {\n        \"id\": 1\n    },\n    \"grupo\": {\n        \"id\": 1\n    },\n    \"subgrupo\": {\n        \"id\": 8\n    },\n    \"ativo\": true\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://{{URL}}/classificacao/",
+									"protocol": "http",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"classificacao",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "http://{{URL}}/classificacao",
+							"request": {
+								"auth": {
+									"type": "oauth2",
+									"oauth2": [
+										{
+											"key": "accessToken",
+											"value": "57cc10ad-a721-40f3-906e-1e9404723db7",
+											"type": "string"
+										},
+										{
+											"key": "tokenType",
+											"value": "bearer",
+											"type": "string"
+										},
+										{
+											"key": "addTokenTo",
+											"value": "header",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "token",
+										"type": "text",
+										"value": "{{CONTA}}"
+									},
+									{
+										"key": "seller-active",
+										"type": "text",
+										"value": "{{SELLER}}"
+									}
+								],
+								"url": {
+									"raw": "http://{{URL}}/classificacao/1",
+									"protocol": "http",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"classificacao",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "http://{{URL}}/classificacao",
+							"request": {
+								"auth": {
+									"type": "oauth2",
+									"oauth2": [
+										{
+											"key": "accessToken",
+											"value": "57cc10ad-a721-40f3-906e-1e9404723db7",
+											"type": "string"
+										},
+										{
+											"key": "tokenType",
+											"value": "bearer",
+											"type": "string"
+										},
+										{
+											"key": "addTokenTo",
+											"value": "header",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [
+									{
+										"key": "token",
+										"type": "text",
+										"value": "{{CONTA}}"
+									},
+									{
+										"key": "seller-active",
+										"type": "text",
+										"value": "{{SELLER}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"departamento\": {\n        \"id\": 1\n    },\n    \"categoria\": {\n        \"id\": 1\n    },\n    \"grupo\": {\n        \"id\": 1\n    },\n    \"subgrupo\": {\n        \"id\": 7\n    },\n    \"ativo\": true\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://{{URL}}/classificacao/1",
+									"protocol": "http",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"classificacao",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "http://{{URL}}/classificacao/filtrar",
+							"request": {
+								"auth": {
+									"type": "oauth2",
+									"oauth2": [
+										{
+											"key": "accessToken",
+											"value": "112d914f-1774-4b85-b8a0-e9200a121ddd",
+											"type": "string"
+										},
+										{
+											"key": "tokenType",
+											"value": "bearer",
+											"type": "string"
+										},
+										{
+											"key": "addTokenTo",
+											"value": "header",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "token",
+										"type": "text",
+										"value": "{{CONTA}}"
+									},
+									{
+										"key": "seller-active",
+										"type": "text",
+										"value": "{{SELLER}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"obj\": \n    {\n    \n        \"subgrupos\": [\n           {\n        \t\t\"id\": 7\n        \t},\n        \t{\n        \t\t\"id\": 8\n        \t}\n        ]\n        ,\n    \"ativo\": true\n    }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://{{URL}}/classificacao/filtrar",
+									"protocol": "http",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"classificacao",
+										"filtrar"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "http://{{URL}}/classificacao/listar",
+							"request": {
+								"auth": {
+									"type": "oauth2",
+									"oauth2": [
+										{
+											"key": "accessToken",
+											"value": "112d914f-1774-4b85-b8a0-e9200a121ddd",
+											"type": "string"
+										},
+										{
+											"key": "tokenType",
+											"value": "bearer",
+											"type": "string"
+										},
+										{
+											"key": "addTokenTo",
+											"value": "header",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "token",
+										"type": "text",
+										"value": "{{CONTA}}"
+									},
+									{
+										"key": "seller-active",
+										"type": "text",
+										"value": "{{SELLER}}"
+									}
+								],
+								"url": {
+									"raw": "http://{{URL}}/classificacao/listar",
+									"protocol": "http",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"classificacao",
+										"listar"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "http://{{URL}}/classificacao/listar/descricao",
+							"request": {
+								"auth": {
+									"type": "oauth2",
+									"oauth2": [
+										{
+											"key": "accessToken",
+											"value": "0e4aa82f-d386-4268-bf7d-69d5b94f297e",
+											"type": "string"
+										},
+										{
+											"key": "tokenType",
+											"value": "bearer",
+											"type": "string"
+										},
+										{
+											"key": "addTokenTo",
+											"value": "header",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "token",
+										"type": "text",
+										"value": "{{CONTA}}"
+									},
+									{
+										"key": "seller-active",
+										"type": "text",
+										"value": "{{SELLER}}"
+									}
+								],
+								"url": {
+									"raw": "http://{{URL}}/classificacao/listar/descricao",
+									"protocol": "http",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"classificacao",
+										"listar",
+										"descricao"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Arquivo",
+					"item": [
+						{
+							"name": "http://{{URL}}/arquivo",
+							"request": {
+								"auth": {
+									"type": "oauth2",
+									"oauth2": [
+										{
+											"key": "accessToken",
+											"value": "4879a0a0-f39d-4032-affe-2913be59b528",
+											"type": "string"
+										},
+										{
+											"key": "tokenType",
+											"value": "bearer",
+											"type": "string"
+										},
+										{
+											"key": "addTokenTo",
+											"value": "header",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "token",
+										"type": "text",
+										"value": "{{CONTA}}"
+									},
+									{
+										"key": "seller-active",
+										"type": "text",
+										"value": "{{SELLER}}"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "arquivo",
+											"type": "file",
+											"src": "/C:/workspace/inovvet-front/src/assets/img/prod/nero.jpg"
+										}
+									],
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://{{URL}}/arquivo/?FILE&tipoArquivo=IMAGEM&modulo=CADASTRO&referencia=PRODUTO&referenciaId=20",
+									"protocol": "http",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"arquivo",
+										""
+									],
+									"query": [
+										{
+											"key": "FILE",
+											"value": null
+										},
+										{
+											"key": "tipoArquivo",
+											"value": "IMAGEM"
+										},
+										{
+											"key": "modulo",
+											"value": "CADASTRO"
+										},
+										{
+											"key": "referencia",
+											"value": "PRODUTO"
+										},
+										{
+											"key": "referenciaId",
+											"value": "20"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "produto",
+					"item": [
+						{
+							"name": "http://{{URL}}/produto/tipo/listar",
+							"request": {
+								"auth": {
+									"type": "oauth2",
+									"oauth2": [
+										{
+											"key": "accessToken",
+											"value": "d716c72b-e61d-4b83-9711-6113b6b9c068",
+											"type": "string"
+										},
+										{
+											"key": "tokenType",
+											"value": "bearer",
+											"type": "string"
+										},
+										{
+											"key": "addTokenTo",
+											"value": "header",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "token",
+										"type": "text",
+										"value": "{{CONTA}}"
+									},
+									{
+										"key": "seller-active",
+										"type": "text",
+										"value": "{{SELLER}}"
+									}
+								],
+								"url": {
+									"raw": "http://{{URL}}/produto/tipo/listar",
+									"protocol": "http",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"produto",
+										"tipo",
+										"listar"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "http://{{URL}}/produto/",
+							"request": {
+								"auth": {
+									"type": "oauth2",
+									"oauth2": [
+										{
+											"key": "accessToken",
+											"value": "4879a0a0-f39d-4032-affe-2913be59b528",
+											"type": "string"
+										},
+										{
+											"key": "tokenType",
+											"value": "bearer",
+											"type": "string"
+										},
+										{
+											"key": "addTokenTo",
+											"value": "header",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "token",
+										"type": "text",
+										"value": "{{CONTA}}"
+									},
+									{
+										"key": "seller-active",
+										"type": "text",
+										"value": "{{SELLER}}"
+									}
+								],
+								"url": {
+									"raw": "http://{{URL}}/produto/20",
+									"protocol": "http",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"produto",
+										"20"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "http://{{URL}}/produto",
+							"request": {
+								"auth": {
+									"type": "oauth2",
+									"oauth2": [
+										{
+											"key": "accessToken",
+											"value": "c4e21083-d445-4fef-b9dc-c8f083e67e7e",
+											"type": "string"
+										},
+										{
+											"key": "tokenType",
+											"value": "bearer",
+											"type": "string"
+										},
+										{
+											"key": "addTokenTo",
+											"value": "header",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "token",
+										"type": "text",
+										"value": "{{CONTA}}"
+									},
+									{
+										"key": "seller-active",
+										"type": "text",
+										"value": "{{SELLER}}"
+									}
+								],
+								"url": {
+									"raw": "http://{{URL}}/produto/19",
+									"protocol": "http",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"produto",
+										"19"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "http://{{URL}}/produto/",
+							"request": {
+								"auth": {
+									"type": "oauth2",
+									"oauth2": [
+										{
+											"key": "accessToken",
+											"value": "c4e21083-d445-4fef-b9dc-c8f083e67e7e",
+											"type": "string"
+										},
+										{
+											"key": "tokenType",
+											"value": "bearer",
+											"type": "string"
+										},
+										{
+											"key": "addTokenTo",
+											"value": "header",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "token",
+										"type": "text",
+										"value": "{{CONTA}}"
+									},
+									{
+										"key": "seller-active",
+										"type": "text",
+										"value": "{{SELLER}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"nome\": \"Ração Nero ¨65kg\",\n    \"descricao\": \"Ração Nero ¨65kg\",\n    \"classificacao\": {\n        \"id\": \"1\"\n    },\n    \"tipo\": {\n        \"id\": \"1\"\n    },\n    \"unidade\": {\n        \"id\": \"59\"\n    },\n    \"marca\": {\n        \"id\": 1\n    },\n    \"arquivos\": [\n        {\n            \"id\": 48\n        }\n    ],\n    \"ativo\": 1\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://{{URL}}/produto",
+									"protocol": "http",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"produto"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "http://{{URL}}/produto/",
+							"request": {
+								"auth": {
+									"type": "oauth2",
+									"oauth2": [
+										{
+											"key": "accessToken",
+											"value": "c4e21083-d445-4fef-b9dc-c8f083e67e7e",
+											"type": "string"
+										},
+										{
+											"key": "tokenType",
+											"value": "bearer",
+											"type": "string"
+										},
+										{
+											"key": "addTokenTo",
+											"value": "header",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [
+									{
+										"key": "token",
+										"type": "text",
+										"value": "{{CONTA}}"
+									},
+									{
+										"key": "seller-active",
+										"type": "text",
+										"value": "{{SELLER}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"nome\": \"Ração Nero ¨65kg\",\n    \"descricao\": \"Ração Nero ¨65kg\",\n    \"ean\": \"7896588907113\",\n    \"classificacao\": {\n        \"id\": \"1\"\n    },\n    \"tipo\": {\n        \"id\": \"1\"\n    },\n    \"unidade\": {\n        \"id\": \"59\"\n    },\n    \"marca\": {\n        \"id\": 1\n    },\n    \"arquivos\": [\n        {\n            \"id\": 48\n        }, \n        {\n            \"id\": 49\n        },\n          {\n            \"id\": 50\n        }\n    ],\n    \"ativo\": 1\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://{{URL}}/produto/20",
+									"protocol": "http",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"produto",
+										"20"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "pessoa",
+					"item": [
+						{
+							"name": "fabricante",
+							"item": [
+								{
+									"name": "http://{{URL}}/fabricante",
+									"request": {
+										"auth": {
+											"type": "oauth2",
+											"oauth2": [
+												{
+													"key": "accessToken",
+													"value": "d40d9a5b-6936-40bf-81ba-18811b7c1dca",
+													"type": "string"
+												},
+												{
+													"key": "tokenType",
+													"value": "bearer",
+													"type": "string"
+												},
+												{
+													"key": "addTokenTo",
+													"value": "header",
+													"type": "string"
+												}
+											]
+										},
+										"method": "POST",
+										"header": [
+											{
+												"key": "token",
+												"type": "text",
+												"value": "{{CONTA}}"
+											},
+											{
+												"key": "seller-active",
+												"type": "text",
+												"value": "{{SELLER}}"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n\t\"razaoSocial\": \"ADIMAX - INDUSTRIA E COMERCIO DE ALIMENTOS LTDA\",\n\t\"nomeFantasia\":\"ADIMAX\",\n\t\"tipo\":\"0\",\n\t\"tipoDocumento\":1,\n\t\"documento\":\"03887324000262\",\n\t\"email\":\"gisele.xavier@magnuspet.com.br\",\n\t\"enderecos\":[\n\t\t{\n\t\t\t\"tipo\": \"COMERCIAL\",\n\t\t\t\"cep\":\"53520820\",\n\t\t\t\"rua\":\"R Governador Paulo Guerra\",\n\t\t\t\"bairro\":\"Distrito Industrial\",\n\t\t\t\"complemento\":\"\",\n\t\t\t\"numero\":\"479\",\n\t\t\t\"cidade\":{\n\t\t\t\t\"id\":\"1\"\n\t\t\t}\n\t\t}\n\t\t],\n\t\"telefones\":[\n\t\t{\n\t\t\t\"tipo\": \"COMERCIAL\",\n\t\t\t\"numero\":\"8132514964\"\n\t\t}\n\t\t\n\t\t\n\t\t],\n\t\t\n\t\t\t\"marcas\":[\n\t\t{\n\t\t\t\"nome\": \"Vet Life\",\n\t\t\t\"ativo\":true\n\t\t},\n\t\t\n\t\t\n\t\t{\n\t\t\t\"nome\": \"Magnus\",\n\t\t\t\"ativo\":true\n\t\t},\n\t\t\t{\n\t\t\t\"nome\": \"Qualidy\",\n\t\t\t\"ativo\":true\n\t\t}\n\t\t\n\t\t],\n\t\t\"ativo\": true\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "http://{{URL}}/fabricante",
+											"protocol": "http",
+											"host": [
+												"{{URL}}"
+											],
+											"path": [
+												"fabricante"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "http://{{URL}}/fabricante",
+									"request": {
+										"auth": {
+											"type": "oauth2",
+											"oauth2": [
+												{
+													"key": "accessToken",
+													"value": "d40d9a5b-6936-40bf-81ba-18811b7c1dca",
+													"type": "string"
+												},
+												{
+													"key": "tokenType",
+													"value": "bearer",
+													"type": "string"
+												},
+												{
+													"key": "addTokenTo",
+													"value": "header",
+													"type": "string"
+												}
+											]
+										},
+										"method": "PUT",
+										"header": [
+											{
+												"key": "token",
+												"type": "text",
+												"value": "{{CONTA}}"
+											},
+											{
+												"key": "seller-active",
+												"type": "text",
+												"value": "{{SELLER}}"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n\t\"razaoSocial\": \"ADIMAX - INDUSTRIA E COMERCIO DE ALIMENTOS LTDA\",\n\t\"nomeFantasia\":\"ADIMAX\",\n\t\"tipo\":\"0\",\n\t\"tipoDocumento\":1,\n\t\"documento\":\"03887324000262\",\n\t\"email\":\"gisele.xavier@magnuspet.com.br\",\n\t\"enderecos\":[\n\t\t{\n\t\t\t\"tipo\": \"COMERCIAL\",\n\t\t\t\"cep\":\"53520820\",\n\t\t\t\"rua\":\"R Governador Paulo Guerra\",\n\t\t\t\"bairro\":\"Distrito Industrial\",\n\t\t\t\"complemento\":\"\",\n\t\t\t\"numero\":\"479\",\n\t\t\t\"cidade\":{\n\t\t\t\t\"id\":\"1\"\n\t\t\t}\n\t\t}\n\t\t],\n\t\"telefones\":[\n\t\t{\n\t\t\t\"tipo\": \"COMERCIAL\",\n\t\t\t\"numero\":\"8132514964\"\n\t\t}\n\t\t\n\t\t\n\t\t],\n\t\t\n\t\t\t\"marcas\":[\n\t\t{\n\t\t\t\"nome\": \"Vet Life\",\n\t\t\t\"ativo\":true\n\t\t},\n\t\t\n\t\t\n\t\t{\n\t\t\t\"nome\": \"Magnus\",\n\t\t\t\"ativo\":true\n\t\t},\n\t\t\t{\n\t\t\t\"nome\": \"Qualidy\",\n\t\t\t\"ativo\":true\n\t\t}\n\t\t\n\t\t],\n\t\t\"ativo\": true\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "http://{{URL}}/fabricante/28",
+											"protocol": "http",
+											"host": [
+												"{{URL}}"
+											],
+											"path": [
+												"fabricante",
+												"28"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "http://{{URL}}/fabricante",
+									"request": {
+										"auth": {
+											"type": "oauth2",
+											"oauth2": [
+												{
+													"key": "accessToken",
+													"value": "d40d9a5b-6936-40bf-81ba-18811b7c1dca",
+													"type": "string"
+												},
+												{
+													"key": "tokenType",
+													"value": "bearer",
+													"type": "string"
+												},
+												{
+													"key": "addTokenTo",
+													"value": "header",
+													"type": "string"
+												}
+											]
+										},
+										"method": "DELETE",
+										"header": [
+											{
+												"key": "token",
+												"type": "text",
+												"value": "{{CONTA}}"
+											},
+											{
+												"key": "seller-active",
+												"type": "text",
+												"value": "{{SELLER}}"
+											}
+										],
+										"url": {
+											"raw": "http://{{URL}}/fabricante/26",
+											"protocol": "http",
+											"host": [
+												"{{URL}}"
+											],
+											"path": [
+												"fabricante",
+												"26"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "http://{{URL}}/fabricante/marca",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"auth": {
+											"type": "oauth2",
+											"oauth2": [
+												{
+													"key": "accessToken",
+													"value": "d40d9a5b-6936-40bf-81ba-18811b7c1dca",
+													"type": "string"
+												},
+												{
+													"key": "tokenType",
+													"value": "bearer",
+													"type": "string"
+												},
+												{
+													"key": "addTokenTo",
+													"value": "header",
+													"type": "string"
+												}
+											]
+										},
+										"method": "GET",
+										"header": [
+											{
+												"key": "token",
+												"type": "text",
+												"value": "{{CONTA}}"
+											},
+											{
+												"key": "seller-active",
+												"type": "text",
+												"value": "{{SELLER}}"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "http://{{URL}}/fabricante/marca/listar?nome=",
+											"protocol": "http",
+											"host": [
+												"{{URL}}"
+											],
+											"path": [
+												"fabricante",
+												"marca",
+												"listar"
+											],
+											"query": [
+												{
+													"key": "nome",
+													"value": ""
+												}
+											]
+										}
+									},
+									"response": []
+								}
+							],
+							"protocolProfileBehavior": {},
+							"_postman_isSubFolder": true
+						},
+						{
+							"name": "http://{{URL}}/pessoa",
+							"request": {
+								"auth": {
+									"type": "oauth2",
+									"oauth2": [
+										{
+											"key": "accessToken",
+											"value": "51ac81b0-6848-4fb3-b960-511318e4a094",
+											"type": "string"
+										},
+										{
+											"key": "tokenType",
+											"value": "bearer",
+											"type": "string"
+										},
+										{
+											"key": "addTokenTo",
+											"value": "header",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "token",
+										"type": "text",
+										"value": "{{CONTA}}"
+									},
+									{
+										"key": "seller-active",
+										"type": "text",
+										"value": "{{SELLER}}"
+									}
+								],
+								"url": {
+									"raw": "http://{{URL}}/parceiro/consulta/03887324000262",
+									"protocol": "http",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"parceiro",
+										"consulta",
+										"03887324000262"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "http://{{URL}}/parceiro/consultar",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "oauth2",
+									"oauth2": [
+										{
+											"key": "accessToken",
+											"value": "902ec4bd-4951-44d9-9333-97ae91cbc91c",
+											"type": "string"
+										},
+										{
+											"key": "tokenType",
+											"value": "bearer",
+											"type": "string"
+										},
+										{
+											"key": "addTokenTo",
+											"value": "header",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "token",
+										"type": "text",
+										"value": "{{CONTA}}"
+									},
+									{
+										"key": "seller-active",
+										"type": "text",
+										"value": "{{SELLER}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://{{URL}}/parceiro/consultar?valor=000",
+									"protocol": "http",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"parceiro",
+										"consultar"
+									],
+									"query": [
+										{
+											"key": "valor",
+											"value": "000"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "http://{{URL}}/parceiro/consultar Copy",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "oauth2",
+									"oauth2": [
+										{
+											"key": "accessToken",
+											"value": "d40d9a5b-6936-40bf-81ba-18811b7c1dca",
+											"type": "string"
+										},
+										{
+											"key": "tokenType",
+											"value": "bearer",
+											"type": "string"
+										},
+										{
+											"key": "addTokenTo",
+											"value": "header",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "token",
+										"type": "text",
+										"value": "{{CONTA}}"
+									},
+									{
+										"key": "seller-active",
+										"type": "text",
+										"value": "{{SELLER}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://{{URL}}/fabricante/consultar?valor=0001",
+									"protocol": "http",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"fabricante",
+										"consultar"
+									],
+									"query": [
+										{
+											"key": "valor",
+											"value": "0001"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Segurança",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "pai",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "app.manager",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "grant_type",
+									"value": "password",
+									"type": "text"
+								},
+								{
+									"key": "username",
+									"value": "diegodamascenopego@hotmail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "admin",
+									"type": "text"
+								},
+								{
+									"key": "scope",
+									"value": "manager",
+									"type": "text"
+								}
+							],
+							"options": {
+								"raw": {
+									"language": "text"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9999/oauth/token",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9999",
+							"path": [
+								"oauth",
+								"token"
+							],
+							"query": [
+								{
+									"key": "grant_type",
+									"value": "password",
+									"disabled": true
+								},
+								{
+									"key": "username",
+									"value": "diegodamascenopego@hotmail.com",
+									"disabled": true
+								},
+								{
+									"key": "password",
+									"value": "admin",
+									"disabled": true
+								},
+								{
+									"key": "scope",
+									"value": "manager",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "fe58c8cb-2a02-4848-a8be-68585319d404",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "8070e2d2-92c2-426b-984e-edd3b96c903a",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "USUÁRIOS",
+			"item": [
+				{
+					"name": "Cadastrar Usuário",
+					"request": {
+						"auth": {
+							"type": "oauth2",
+							"oauth2": [
+								{
+									"key": "addTokenTo",
+									"value": "header",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "token",
+								"value": "12345678910111213",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"nome\": \"Usuario Base\",\n\t\"cpf\": \"04204133401\",\n\t\"email\": \"vsm.thiagobelini@gmail.com\",\n\t\"tipoUsuario\": \"Administrador\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:9999/registrar?token=12345678910111213",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9999",
+							"path": [
+								"registrar"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "12345678910111213"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Ativar Usuário",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9999/usuario/ativar/08ec88e0-a207-4686-9a3c-2dc734ee0c7e?",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9999",
+							"path": [
+								"usuario",
+								"ativar",
+								"08ec88e0-a207-4686-9a3c-2dc734ee0c7e"
+							],
+							"query": [
+								{
+									"key": "hash",
+									"value": "d2bf2790-a858-47f0-b4c5-8c982e932cbc",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Confirmar Usuário",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "admin"
+						},
+						"url": {
+							"raw": "http://localhost:9999/usuario/confirmarSenha?email=vsm.thiagobelini@gmail.com",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9999",
+							"path": [
+								"usuario",
+								"confirmarSenha"
+							],
+							"query": [
+								{
+									"key": "senha",
+									"value": "admin",
+									"disabled": true
+								},
+								{
+									"key": "email",
+									"value": "vsm.thiagobelini@gmail.com"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Dados Usuario",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "703d4fbe-32d2-47b8-9a30-f0da5d2546b4",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "838c99fd-f34c-4691-8692-0e6d262a9498",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:9999/oauth/user",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9999",
+							"path": [
+								"oauth",
+								"user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "https://inovvet-manager-accounts-api.herokuapp.com/conta/registrar/11b435d4a101437a862ce370d21f7516",
+					"request": {
+						"auth": {
+							"type": "oauth2",
+							"oauth2": [
+								{
+									"key": "accessToken",
+									"value": "3c380fbd-1873-4b04-b41e-926057a822c1",
+									"type": "string"
+								},
+								{
+									"key": "tokenType",
+									"value": "bearer",
+									"type": "string"
+								},
+								{
+									"key": "addTokenTo",
+									"value": "header",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "token",
+								"value": "12345678910111213",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"nome\": \"Davi Furtado Pêgo\",\n\t\"cpf\": \"04204133401\",\n\t\"email\": \"davifurtadopegoo@gmail.com\",\n\t\"tipoUsuario\": \"Administrador\"\n}"
+						},
+						"url": {
+							"raw": "https://inovvet-manager-accounts-api.herokuapp.com/conta/registrar/11b435d4a101437a862ce370d21f7516",
+							"protocol": "https",
+							"host": [
+								"inovvet-manager-accounts-api",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"conta",
+								"registrar",
+								"11b435d4a101437a862ce370d21f7516"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "https://inovvet-manager-accounts-api.herokuapp.com/conta/registrar/11b435d4a101437a862ce370d21f7516 Copy",
+					"request": {
+						"auth": {
+							"type": "oauth2",
+							"oauth2": [
+								{
+									"key": "accessToken",
+									"value": "3c380fbd-1873-4b04-b41e-926057a822c1",
+									"type": "string"
+								},
+								{
+									"key": "tokenType",
+									"value": "bearer",
+									"type": "string"
+								},
+								{
+									"key": "addTokenTo",
+									"value": "header",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "token",
+								"value": "12345678910111213",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"nome\": \"Davi Furtado Pêgo\",\n\t\"cpf\": \"04204133401\",\n\t\"email\": \"davifurtadopegoo@gmail.com\",\n\t\"tipoUsuario\": \"Administrador\"\n}"
+						},
+						"url": {
+							"raw": "https://inovvet-manager-accounts-api.herokuapp.com/conta/registrar/11b435d4a101437a862ce370d21f7516",
+							"protocol": "https",
+							"host": [
+								"inovvet-manager-accounts-api",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"conta",
+								"registrar",
+								"11b435d4a101437a862ce370d21f7516"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"protocolProfileBehavior": {}
+}

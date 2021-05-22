@@ -1,0 +1,18 @@
+<mat-form-field>
+   <input type="text" placeholder="Classificação" 
+   aria-label="Number" 
+   matInput [formControl]="control"
+      [matAutocomplete]="auto"
+      [(ngModel)]="value">
+   <mat-autocomplete #auto="matAutocomplete" 
+   autoActiveFirstOption 
+   [displayWith]="display"
+   (optionSelected)="onSelecionar($event.option.value)"
+   >
+      <mat-optgroup *ngFor="let departamento of filteredOptions | async" [label]="departamento.descricao">
+         <mat-option *ngFor="let entity of departamento.opcoes" [value]="entity">
+            {{entity.descricao}}
+          </mat-option>
+      </mat-optgroup>
+   </mat-autocomplete>
+</mat-form-field>

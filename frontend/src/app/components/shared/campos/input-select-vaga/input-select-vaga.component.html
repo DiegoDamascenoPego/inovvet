@@ -1,0 +1,20 @@
+<div [formGroup]="formGroup">
+    <mat-form-field>
+        <mat-label>{{formTitle}}</mat-label>
+        <mat-select 
+        [id]="fControlName" 
+        [formControlName]="fControlName" 
+        [compareWith]="compareFn" 
+        required #select>
+        <mat-select-trigger>
+            {{ select.value?.hora }}
+          </mat-select-trigger>
+            <mat-option *ngFor="let opcao of opcoes" [value]="opcao" (onSelectionChange)="onSelect($event)" 
+            [disabled]= "opcao.disponivel <= 0" 
+            >
+                {{ opcao.hora + " - vagas "+ opcao.disponivel}}
+            </mat-option>
+        </mat-select>
+    </mat-form-field>
+    <app-error-detail [control]="formControl"></app-error-detail>
+</div>

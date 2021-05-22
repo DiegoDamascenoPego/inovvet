@@ -1,0 +1,29 @@
+<div class="    ">
+   <div
+      class="sidebar"
+      data-color="danger"
+      data-background-color="white"
+      data-image="./assets/img/sidebar-1.jpg"
+   >
+      <app-sidebar></app-sidebar>
+
+      <div
+         class="sidebar-background"
+         style="background-image: url(./assets/img/sidebar-6.jpg)"
+      ></div>
+   </div>
+   <div class="main-panel">
+      <div class="fixed-top">
+         <app-loading></app-loading>
+      </div>
+
+      <app-navbar></app-navbar>
+      <ngx-spinner bdColor="rgba(51,51,51,0.8)" size="large" fullScreen="true" type="ball-spin-fade-rotating">
+         <p style="font-size: 20px; color: white">...</p>
+      </ngx-spinner>
+      <router-outlet></router-outlet>
+      <div>
+         <app-footer></app-footer>
+      </div>
+   </div>
+</div>

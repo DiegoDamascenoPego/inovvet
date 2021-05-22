@@ -1,0 +1,17 @@
+<app-master-form [titulo]="tituloPagina">
+   <div class="card-body">
+      <form [formGroup]="form" appFormValidator autocomplete="off">
+         <div class="row">
+            <app-input-text formTitle="Nome" fControlName="nome" [formGroup]="form" class="col-md-10"></app-input-text>
+            <app-input-active fControlName="ativo" [formGroup]="form" class="col-md-2"></app-input-active>
+         </div>
+
+         <div class="row">
+            <app-button type="info" label="Pesquisar" align="default" (cClick)="onPesquisar()" class="col-xs-12 col-md-4 "></app-button>
+         </div>
+      </form>
+   </div>   
+   <app-table [dataSource]="dataSource" [displayedColumns]="displayedColumns" (edit)="onEdit($event)"
+      (delete)="onDelete($event.id, $event.nome)" [pageIndex]="pageIndex" [pagelength]="pagelength"
+      [pageSize]="pageSize" (page)="onPesquisar()"></app-table>
+</app-master-form>
