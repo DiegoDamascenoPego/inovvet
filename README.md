@@ -35,17 +35,17 @@ Abaixo será demonstrado o objetivo de cada serviço.
   Serviço responsável prover recursos extras como a consulta de cep e cnpj. 
   
 ### front end
-    O front end foi desenvolvido com o framework Angular com a suite de componentes do Angular Material
     
-    - Angular Material
-    - SSR(Server side Render)
-    - Fundamentos do angular utilizados
-    	- Router
-	- Directive
-	- HttpInterceptor
-	- Resolvers
-	- Guard
-	- HttpClient
+   O front end foi desenvolvido com o framework Angular com a suite de componentes do Angular Material.    
+   - Angular Material
+   - SSR(Server side Render)
+   - Fundamentos do angular utilizados
+   	- Router
+   	- Directive
+   	- HttpInterceptor
+   	- Resolvers
+   	- Guard
+   	- HttpClient
     
     
   
