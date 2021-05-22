@@ -33,12 +33,18 @@ Abaixo será demonstrado o objetivo de cada serviço.
 	
   Serviço responsável prover recursos extras como a consulta de cep e cnpj. 
   
+  ![](arquitetura.png)
+  
   Como todo o sistema deve atender ou facilitar rotinas do dia a dia , desta forma foi escolhido o seguimento de varejo PET para validar a aplicabilidade do projeto com os seguintes recursos.
   - Cadastro de Clientes
   - Cadastro de Animais
   - Cadastro de produtos
   - Definição de arvóre mercadológica
   - Gestão de atendimento
+
+![](cliente.png)
+![](produto.png)
+![](atendimento.png)
 
 	
 
