@@ -1,0 +1,99 @@
+server:
+  port: 9998
+
+logging:
+  level:
+    org.springframework.web: DEBUG 
+    org.springframework.security: DEBUG      
+
+spring:
+  datasource:
+    url: ${projeto.db.url}?createDatabaseIfNotExist=true&zeroDateTimeBehavior=CONVERT_TO_NULL&useSSL=false&useTimezone=true&serverTimezone=UTC&allowPublicKeyRetrieval=true
+    username: ${projeto.db.usuario}
+    password: ${projeto.db.senha}
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    hikari:
+      cachePrepStmts: true
+      prepStmtCacheSize: 250
+      prepStmtCacheSqlLimit: 2048
+      idle-timeout: 600000 
+      maximum-pool-size: 10
+      minimum-idle: 2
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: none
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: ??????????????????
+    password: ??????????????????
+    properties:
+      mail.smtp.auth: true
+      mail.transport.protocol: smtp
+      mail.smtp.starttls.enable: true
+      mail.debug: true
+      mail.smtp.connectiontimeout: 10000
+
+security:
+  oauth2:
+    client:
+      id: app.manager
+      client-id: app.manager
+      client-secret: pai
+      access-token-uri: ${projeto.auth-api}/oauth/token
+      user-authorization-uri: ${projeto.auth-api}/oauth/authorize
+      authenticationScheme: query
+      clientAuthenticationScheme: header
+      grant-type: client_credentials
+      scope: manager
+    resource:
+      user-info-uri: ${projeto.auth-api}/oauth/user
+      
+---
+spring:
+  profiles: dev
+projeto:
+  auth-api: http://localhost:9999
+  plataformaUi: http://localhost:4200
+  plataformaApi: http://localhost:9990
+  app:
+    ip: localhost
+  db:
+    url: jdbc:mysql://localhost:3306/gestao
+    database: gestao
+    usuario: root
+    senha: 123456789
+      
+---
+spring:
+  profiles: prod
+projeto:
+  auth-api: http://inovvet-auth:9999
+  plataformaUi:  https://www.inovvet.com.br
+  plataformaApi: http://inovvet-plataforma:9990
+  db:
+    url: jdbc:mysql://inovvet-mysql:3306/gestao
+    database: gestao
+    usuario: root
+    senha: 123456789 
+     
+---
+spring:
+  profiles: docker
+projeto:
+  auth-api: http://localhost:9999
+  plataformaUi: http://localhost:4200
+  plataformaApi: http://localhost:8080
+  db:
+    url: jdbc:mysql://inovvet-mysql:3306/gestao
+    database: gestao
+    usuario: root
+    senha: 123456789        
+
+        
+    
+    

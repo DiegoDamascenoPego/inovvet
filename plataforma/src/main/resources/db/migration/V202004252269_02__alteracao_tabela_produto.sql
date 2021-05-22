@@ -1,0 +1,2 @@
+ALTER TABLE `produto` ADD COLUMN `marca_id` SMALLINT UNSIGNED DEFAULT NULL AFTER `produto_classificacao_id`;
+ALTER TABLE `produto` ADD CONSTRAINT `fk_produto_on_produto_marca` FOREIGN KEY (`marca_id`) REFERENCES `marca` (`id`);

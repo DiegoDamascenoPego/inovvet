@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD//EN" "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+
+<!-- INICIA A CONFIGURACAO DO HIBERNATE -->
+<hibernate-configuration>
+
+	<!-- Cria uma fábrica de Sessão na qual cada sessão é responsável por gerenciar o POOL de Conexão -->
+	<session-factory>
+	
+		<!-- Configuração padrão mínima para o funcionamento e aquisição da sessão com suas conexões -->
+		<!-- <property name="connection.driver_class">com.mysql.jdbc.Driver</property>
+		<property name="connection.url">jdbc:mysql://localhost/control_stock_solution_t34?createDatabaseIfNotExist=true</property>
+		<property name="connection.username">root</property>
+		<property name="connection.password">drogaria</property>
+		<property name="connection.pool_size">31</property>
+		<property name="connection.autocommit">false</property>
+		<property name="dialect">org.hibernate.dialect.MySQL5InnoDBDialect</property> -->
+		
+		<property name="connection.driver_class">org.h2.Driver</property>
+		<property name="connection.url">jdbc:h2:file:./db/db-stock;DB_CLOSE_DELAY=-1;INIT=CREATE SCHEMA IF NOT EXISTS control_stock_solution_t34;DB_CLOSE_ON_EXIT=FALSE</property>
+		<property name="connection.username">sa</property>
+		<property name="connection.password">sa</property>
+		<property name="dialect">org.hibernate.dialect.H2Dialect</property>
+				
+		<!-- É aqui que se informa se o Hibernate criará todas as tabelas automaticamente -->
+		<!-- create-drop = Apaga e cria o banco com base nas annotations cada vez que executa o BD -->
+		<!-- create = Cria a estrutura do banco de dados com base nos Models(POs) -->
+		<!-- update = Apenas atualiza a estrutura. Obs: Usado quando em Desenvolvimento -->
+		<!-- validate = Apenas valida a estrutura. Obs: Usado quando em Produção -->
+		<property name="hbm2ddl.auto">create-drop</property>
+		<property name="hibernate.current_session_context_class">thread</property>
+		
+		<!-- Aqui informamos as Classes POs que o Hibernate gerenciará -->
+		<mapping class="br.com.srcsoftware.manager.abstracts.AbsctractPO"/>
+		<mapping class="br.com.srcsoftware.controlstocksolution.moduloproduto.produto.model.ProdutoPO"/>
+		<mapping class="br.com.srcsoftware.controlstocksolution.moduloproduto.categoria.model.CategoriaPO"/>
+		<mapping class="br.com.srcsoftware.controlstocksolution.moduloproduto.unidade.model.UnidadePO"/>
+		
+	</session-factory>
+</hibernate-configuration>

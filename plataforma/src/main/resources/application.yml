@@ -1,0 +1,114 @@
+server:
+  port: 9990
+
+
+logging:
+  level:
+    org.springframework.web: DEBUG 
+    org.springframework.security: DEBUG
+    org.hibernate.SQL: DEBUG
+    org.hibernate.type.descriptor.sql:  DEBUG
+
+spring:
+  servlet:
+    multipart:
+      max-file-size: 10MB
+      max-request-size: 10MB
+  datasource:
+    url: ${projeto.db.url}?createDatabaseIfNotExist=true&zeroDateTimeBehavior=CONVERT_TO_NULL&useSSL=false&useTimezone=true&serverTimezone=America/Sao_Paulo&allowPublicKeyRetrieval=true
+    username: ${projeto.db.usuario}
+    password: ${projeto.db.senha}
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    hikari:
+      cachePrepStmts: true
+      prepStmtCacheSize: 250
+      prepStmtCacheSqlLimit: 2048
+      idle-timeout: 600000 
+      maximum-pool-size: 10
+      minimum-idle: 2
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: none
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL5InnoDBDialect  
+        jdbc.time_zone: UTC
+        
+  jackson:
+    serialization:
+      write-dates-as-timestamps: false
+      fail-on-empty-beans: false
+   
+security:
+  oauth2:
+    client:
+      id: app.manager
+      client-id: app.manager
+      client-secret: pai
+      access-token-uri: ${projeto.authApi}/oauth/token
+      user-authorization-uri: ${projeto.authApi}/oauth/authorize
+      authenticationScheme: query
+      clientAuthenticationScheme: header
+      grant-type: client_credentials
+      scope: manager
+    resource:
+      user-info-uri: ${projeto.authApi}/oauth/user
+
+cloud:
+  aws:
+    stack:
+      auto: false
+    region:
+      auto: false
+      static: us-east-2
+    credentials:
+      access-key: ????????????????????
+      secret-key: ????????????????????
+   
+---
+spring:
+  profiles: dev
+projeto:
+  authApi: http://localhost:9999
+  plataformaUi: http://localhost:4200
+  accountsApi:  http://localhost:9998
+  bucket: inovvet
+  app:
+    ip: localhost
+  db:
+    url: jdbc:mysql://localhost:3306/plataforma
+    database: plataforma
+    usuario: root
+    senha: 123456789
+  
+---
+spring:
+  profiles: prod
+projeto:
+  authApi: http://inovvet-auth:9999
+  plataformaUi: https://www.inovvet.com.br
+  accountsApi:  http://inovvet-accounts:9998
+  bucket: inovvet
+  db:
+    url: jdbc:mysql://inovvet-mysql:3306/plataforma
+    database: plataforma
+    usuario: root
+    senha: 123456789
+    
+---  
+spring:
+  profiles: docker
+projeto:
+  authApi: http://localhost:9999
+  plataformaUi: http://localhost:4200
+  accountsApi:  http://localhost:9998
+  bucket: inovvet
+  app:
+    ip: localhost
+  db:
+    url: jdbc:mysql://inovvet-mysql:3306/plataforma
+    database: plataforma
+    usuario: root
+    senha: 123456789
+

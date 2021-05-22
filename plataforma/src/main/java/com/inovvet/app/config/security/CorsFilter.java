@@ -1,0 +1,66 @@
+package com.inovvet.app.config.security;
+
+import java.io.IOException;
+
+import javax.servlet.Filter;
+import javax.servlet.FilterChain;
+import javax.servlet.FilterConfig;
+import javax.servlet.ServletException;
+import javax.servlet.ServletRequest;
+import javax.servlet.ServletResponse;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.Ordered;
+import org.springframework.core.annotation.Order;
+import org.springframework.stereotype.Component;
+
+import com.inovvet.app.config.Projeto;
+
+@Component
+@Order(Ordered.HIGHEST_PRECEDENCE)
+public class CorsFilter implements Filter {
+
+	@Autowired
+	private Projeto projeto;
+
+	@Override
+	public void doFilter(ServletRequest req, ServletResponse resp, FilterChain chain)
+			throws IOException, ServletException {
+
+		HttpServletRequest request = (HttpServletRequest) req;
+		HttpServletResponse response = (HttpServletResponse) resp;
+
+		response.setHeader("Access-Control-Allow-Origin", projeto.getPlataformaUi());
+		response.setHeader("Access-Control-Allow-Credentials", "true");
+
+		System.out.println("teste");
+		System.out.println(request.getHeader("Origin"));
+
+		System.out.println(projeto.getPlataformaUi());
+
+//		if ("OPTIONS".equals(request.getMethod()) && projeto.getPlataformaUi().equals(request.getHeader("Origin"))) {
+		if ("OPTIONS".equals(request.getMethod())) {
+			response.setHeader("Access-Control-Allow-Methods", "POST, GET, DELETE, PUT, OPTIONS");
+			response.setHeader("Access-Control-Allow-Headers",
+					"Authorization, Content-Type, Accept, token, seller-active");
+			response.setHeader("Access-Control-Max-Age", "10");
+
+			System.out.println(request.getHeader("Origin"));
+			response.setStatus(HttpServletResponse.SC_OK);
+		} else {
+			chain.doFilter(req, resp);
+		}
+
+	}
+
+	@Override
+	public void destroy() {
+	}
+
+	@Override
+	public void init(FilterConfig arg0) throws ServletException {
+	}
+
+}

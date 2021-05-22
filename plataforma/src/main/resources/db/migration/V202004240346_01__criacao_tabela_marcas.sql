@@ -1,0 +1,13 @@
+CREATE TABLE IF NOT EXISTS
+  `marca` (
+  `id` SMALLINT UNSIGNED NOT NULL AUTO_INCREMENT,
+  `nome` VARCHAR(30) NOT NULL,
+  `fabricante_id` INT(11) UNSIGNED NOT NULL,
+  `ativo` TINYINT(1) NOT NULL DEFAULT 1,  
+  `data_cadastro` TIMESTAMP NULL DEFAULT CURRENT_TIMESTAMP,
+  `data_atualizacao` TIMESTAMP NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`),
+  unique key(nome),
+  CONSTRAINT `fk_cliente_marca_on_pessoa` FOREIGN KEY (`fabricante_id`) REFERENCES `pessoa` (`id`)
+)
+ENGINE=InnoDB;

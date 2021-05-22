@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.15.0.final using JasperReports Library version 6.15.0-dd49bfb94918336b8321d5507193f0169ead4e95  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="RelatorioAtendimentos" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="49c531cb-21d8-4022-a2ef-2506afbbfc32">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="Plataforma  Data Adapter "/>
+	<parameter name="DATAIMPRESSAO" class="java.lang.String"/>
+	<parameter name="LOJA" class="java.lang.String"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT
+ta.id,
+ta.nome,
+count(a.id) as qtd
+FROM tipo_atendimento ta 
+INNER JOIN atendimento a on a.tipo_atendimento_id = ta.id
+group by ta.id]]>
+	</queryString>
+	<field name="id" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="id"/>
+		<property name="com.jaspersoft.studio.field.label" value="id"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="tipo_atendimento"/>
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="nome" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="nome"/>
+		<property name="com.jaspersoft.studio.field.label" value="nome"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="tipo_atendimento"/>
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="qtd" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="qtd"/>
+		<property name="com.jaspersoft.studio.field.label" value="qtd"/>
+	</field>
+	<variable name="SUM_REGISTROS" class="java.lang.Integer" calculation="Sum">
+		<variableExpression><![CDATA[$F{qtd}]]></variableExpression>
+	</variable>
+	<title>
+		<band height="50" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="550" height="30" uuid="8bd67397-753a-4a19-8ffb-349a51c6ca1c"/>
+				<textElement textAlignment="Center">
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Relatório de Atendimentos]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="0" y="30" width="555" height="20" uuid="86c752b7-09c2-4f30-8c22-ff41abb204b8"/>
+				<box>
+					<bottomPen lineWidth="1.0" lineStyle="Dashed"/>
+				</box>
+				<textFieldExpression><![CDATA[$P{LOJA}]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report" pattern="MMMM d, yyyy h:mm:ss a">
+				<reportElement x="350" y="36" width="201" height="14" uuid="f5dd0d65-55f3-4222-9e61-43936b3767b9"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<detail>
+		<band height="26" splitType="Stretch">
+			<textField>
+				<reportElement mode="Opaque" x="0" y="0" width="555" height="16" backcolor="#E6E3E3" uuid="1b93eea1-7ef3-4744-8191-4164b26fad97">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="2457e4bc-08cd-4433-bc2b-d707559cd049"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{nome}]]></textFieldExpression>
+			</textField>
+			<subreport>
+				<reportElement x="0" y="16" width="555" height="10" uuid="38b93b02-68eb-424a-a331-a77c22edc0a3"/>
+				<subreportParameter name="TIPO_ATENDIMENTO_ID">
+					<subreportParameterExpression><![CDATA[$F{id}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression><![CDATA["src/main/resources/reports/atendimento/RelatorioAtendimentoDetalhe.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="20" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="100" height="20" uuid="7fa6d410-e46e-499d-8c55-089535f4d579"/>
+				<text><![CDATA[Inovvet Sistemas]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="340" y="0" width="160" height="20" uuid="8a5ac19d-4b81-4bf9-bf7e-9d0e3c4460b4"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA["Pagina " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement x="500" y="0" width="50" height="20" uuid="a5d3d198-ea8f-4f38-a276-62cdb278cd36"/>
+				<textElement textAlignment="Left"/>
+				<textFieldExpression><![CDATA[" de " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="40">
+			<textField>
+				<reportElement x="520" y="20" width="35" height="13" uuid="deb3749f-d28f-4fef-af08-bbcfde7d451c">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Right">
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{SUM_REGISTROS}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="455" y="5" width="100" height="13" uuid="08de04b1-bab8-459e-a934-4cad2b428fd0">
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Right">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Total Atendimentos]]></text>
+			</staticText>
+		</band>
+	</summary>
+</jasperReport>

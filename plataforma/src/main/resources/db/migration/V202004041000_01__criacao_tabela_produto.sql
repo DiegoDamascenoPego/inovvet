@@ -1,0 +1,82 @@
+CREATE TABLE IF NOT EXISTS
+  `departamento` (
+  `id` SMALLINT(6) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `seguimento_id` SMALLINT(2) UNSIGNED NULL,
+  `nome` VARCHAR(50) NOT NULL,
+  `ativo` TINYINT(1) NOT NULL DEFAULT 1,
+  `data_cadastro` TIMESTAMP NULL DEFAULT CURRENT_TIMESTAMP,
+  `data_atualizacao` TIMESTAMP NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`),
+  CONSTRAINT `fk_departamento_on_seguimento` FOREIGN KEY (`seguimento_id`) REFERENCES `seguimento` (`id`)
+)
+ENGINE=InnoDB;
+
+CREATE TABLE IF NOT EXISTS
+  `categoria` (
+  `id` SMALLINT(6) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `nome` VARCHAR(50) NOT NULL,
+  `ativo` TINYINT(1) NOT NULL DEFAULT 1,
+  `data_cadastro` TIMESTAMP NULL DEFAULT CURRENT_TIMESTAMP,
+  `data_atualizacao` TIMESTAMP NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`)
+)
+ENGINE=InnoDB;
+
+
+CREATE TABLE IF NOT EXISTS
+  `grupo` (
+  `id` SMALLINT(6) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `nome` VARCHAR(50) NOT NULL,
+  `ativo` TINYINT(1) NOT NULL DEFAULT 1,
+  `data_cadastro` TIMESTAMP NULL DEFAULT CURRENT_TIMESTAMP,
+  `data_atualizacao` TIMESTAMP NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`)
+)
+ENGINE=InnoDB;
+
+CREATE TABLE IF NOT EXISTS
+  `subgrupo` (
+  `id` SMALLINT(6) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `nome` VARCHAR(50) NOT NULL,
+  `ativo` TINYINT(1) NOT NULL DEFAULT 1,
+  `data_cadastro` TIMESTAMP NULL DEFAULT CURRENT_TIMESTAMP,
+  `data_atualizacao` TIMESTAMP NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`)
+)
+ENGINE=InnoDB;
+
+CREATE TABLE IF NOT EXISTS
+  `produto_classificacao` (
+  `id` SMALLINT(6) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `departamento_id` SMALLINT(6) UNSIGNED,
+  `categoria_id` SMALLINT(6) UNSIGNED ,
+  `grupo_id` SMALLINT(6) UNSIGNED ,
+  `subgrupo_id` SMALLINT(6) UNSIGNED ,
+  `nome` VARCHAR(50) NOT NULL,
+  `ativo` TINYINT(1) NOT NULL DEFAULT 1,
+  `data_cadastro` TIMESTAMP NULL DEFAULT CURRENT_TIMESTAMP,
+  `data_atualizacao` TIMESTAMP NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`),
+   CONSTRAINT `fk_produto_classificacao_on_departamento` FOREIGN KEY (`departamento_id`) REFERENCES `departamento` (`id`),
+   CONSTRAINT `fk_produto_classificacao_on_categoria` FOREIGN KEY (`categoria_id`) REFERENCES `categoria` (`id`),
+   CONSTRAINT `fk_produto_classificacao_on_grupo` FOREIGN KEY (`grupo_id`) REFERENCES `grupo` (`id`),
+   CONSTRAINT `fk_produto_classificacao_on_subgrupo` FOREIGN KEY (`subgrupo_id`) REFERENCES `subgrupo` (`id`)
+)
+ENGINE=InnoDB;
+
+
+
+CREATE TABLE IF NOT EXISTS
+  `produto` (
+  `id` INT(11) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `nome` VARCHAR(50) NOT NULL,
+  `descricao` VARCHAR(150) NOT NULL,
+  `tipo` TINYINT(1) NOT NULL DEFAULT 1 COMMENT '0 = Revenda 1 = Consumo',
+  `produto_classificacao_id` SMALLINT(6) UNSIGNED NULL,
+  `ativo` TINYINT(1) NOT NULL DEFAULT 1,
+  `data_cadastro` TIMESTAMP NULL DEFAULT CURRENT_TIMESTAMP,
+  `data_atualizacao` TIMESTAMP NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`),
+   CONSTRAINT `fk_produto_on_produto_classificacao` FOREIGN KEY (`produto_classificacao_id`) REFERENCES `produto_classificacao` (`id`)
+)
+ENGINE=InnoDB;

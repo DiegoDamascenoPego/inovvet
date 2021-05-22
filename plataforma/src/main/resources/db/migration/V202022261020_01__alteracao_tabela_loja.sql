@@ -1,0 +1,4 @@
+ALTER TABLE `loja`
+	ADD COLUMN `ie` VARCHAR(20) NULL AFTER `nome_fantasia`,
+	ADD COLUMN  `email` VARCHAR(255) NULL AFTER `ie`,
+	ADD COLUMN `telefone` VARCHAR(20) NOT NULL AFTER `email`;

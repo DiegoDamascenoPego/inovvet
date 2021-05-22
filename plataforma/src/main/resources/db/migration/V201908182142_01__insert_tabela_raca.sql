@@ -1,0 +1,26 @@
+
+INSERT INTO raca (tipo, descricao) VALUES (5,'Agama');
+INSERT INTO raca (tipo, descricao) VALUES (5,'Anolis Verde');
+INSERT INTO raca (tipo, descricao) VALUES (5,'Bombina Oriental');
+INSERT INTO raca (tipo, descricao) VALUES (5,'Cágado');
+INSERT INTO raca (tipo, descricao) VALUES (5,'Cágado Pescoço de Cobra');
+INSERT INTO raca (tipo, descricao) VALUES (5,'Camaleão do Yemen');
+INSERT INTO raca (tipo, descricao) VALUES (5,'Cobra de Casa Africana');
+INSERT INTO raca (tipo, descricao) VALUES (5,'Cobra do Milho');
+INSERT INTO raca (tipo, descricao) VALUES (5,'Cobra Falsa Coral');
+INSERT INTO raca (tipo, descricao) VALUES (5,'Cobra Real Californiana');
+INSERT INTO raca (tipo, descricao) VALUES (5,'Cobra Real Mexicana Negra');
+INSERT INTO raca (tipo, descricao) VALUES (5,'Dragão Barbudo');
+INSERT INTO raca (tipo, descricao) VALUES (5,'Gecko Leopardo');
+INSERT INTO raca (tipo, descricao) VALUES (5,'Iguana');
+INSERT INTO raca (tipo, descricao) VALUES (5,'Iguana Verde');
+INSERT INTO raca (tipo, descricao) VALUES (5,'Jabuti');
+INSERT INTO raca (tipo, descricao) VALUES (5,'Jabuti de Patas Vermelhas');
+INSERT INTO raca (tipo, descricao) VALUES (5,'Jiboia');
+INSERT INTO raca (tipo, descricao) VALUES (5,'Salamandra-de-fogo');
+INSERT INTO raca (tipo, descricao) VALUES (5,'Suaçuboia');
+INSERT INTO raca (tipo, descricao) VALUES (5,'Tartaruga');
+INSERT INTO raca (tipo, descricao) VALUES (5,'Tartarugas tigres d`água');
+INSERT INTO raca (tipo, descricao) VALUES (5,'Teiú');
+INSERT INTO raca (tipo, descricao) VALUES (5,'Teju');
+INSERT INTO raca (tipo, descricao) VALUES (5,'Tritão Ventre de Fogo');

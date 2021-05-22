@@ -1,0 +1,15 @@
+CREATE TABLE IF NOT EXISTS
+  `servico` (
+  `id` SMALLINT(6) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `seguimento_id` SMALLINT(6) UNSIGNED NOT NULL,
+  `nome` VARCHAR(100) NOT NULL,
+  `descricao` VARCHAR(150) NULL,
+  `tempo_execucao` TINYINT(3) DEFAULT 0,
+  `permite_agendamento` TINYINT(1) NOT NULL DEFAULT 1,
+  `ativo` TINYINT(1) NOT NULL DEFAULT 1,
+  `data_cadastro` TIMESTAMP NULL DEFAULT CURRENT_TIMESTAMP,
+  `data_atualizacao` TIMESTAMP NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`),
+   CONSTRAINT `fk_servico_on_setor` FOREIGN KEY (`seguimento_id`) REFERENCES `seguimento` (`id`)
+)
+ENGINE=InnoDB;

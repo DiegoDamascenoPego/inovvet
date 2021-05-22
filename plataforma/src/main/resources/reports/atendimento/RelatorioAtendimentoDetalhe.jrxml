@@ -1,0 +1,257 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.16.0.final using JasperReports Library version 6.16.0-48579d909b7943b64690c65c71e07e0b80981928  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="RelatorioAtendimentoDetalhe" pageWidth="555" pageHeight="802" whenNoDataType="AllSectionsNoDetail" columnWidth="555" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="46c843b4-a902-460f-a10a-5217a20981c5">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+	<parameter name="TIPO_ATENDIMENTO_ID" class="java.lang.Integer"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT
+l.nome_fantasia as nomeFantasia,
+t.nome as nomeTipoAtendimento,
+c.nome as nomeCli,
+an.nome as nomeAnimal,
+ci.nome as nomeCid,
+a.*
+
+FROM atendimento a
+	LEFT join cliente c ON c.id = a.cliente_id
+	LEFT join animal an on an.id = a.animal_id
+	LEFT join loja l on l.id = a.loja_id
+	LEFT join tipo_atendimento t on t.id = a.tipo_atendimento_id
+	LEFT join cidade ci on ci.codigo = a.cidade_codigo
+	where a.tipo_atendimento_id = $P{TIPO_ATENDIMENTO_ID}
+
+	order by a.data asc]]>
+	</queryString>
+	<field name="nomeFantasia" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="nome_fantasia"/>
+		<property name="com.jaspersoft.studio.field.label" value="nomeFantasia"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="loja"/>
+	</field>
+	<field name="nomeTipoAtendimento" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="nome"/>
+		<property name="com.jaspersoft.studio.field.label" value="nomeTipoAtendimento"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="tipo_atendimento"/>
+	</field>
+	<field name="nomeCli" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="nome"/>
+		<property name="com.jaspersoft.studio.field.label" value="nomeCli"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="cliente"/>
+	</field>
+	<field name="nomeAnimal" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="nome"/>
+		<property name="com.jaspersoft.studio.field.label" value="nomeAnimal"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="animal"/>
+	</field>
+	<field name="nomeCid" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="nome"/>
+		<property name="com.jaspersoft.studio.field.label" value="nomeCid"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="cidade"/>
+	</field>
+	<field name="id" class="java.lang.Long">
+		<property name="com.jaspersoft.studio.field.name" value="id"/>
+		<property name="com.jaspersoft.studio.field.label" value="id"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="atendimento"/>
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="tipo_atendimento_id" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="tipo_atendimento_id"/>
+		<property name="com.jaspersoft.studio.field.label" value="tipo_atendimento_id"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="atendimento"/>
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="loja_id" class="java.lang.Long">
+		<property name="com.jaspersoft.studio.field.name" value="loja_id"/>
+		<property name="com.jaspersoft.studio.field.label" value="loja_id"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="atendimento"/>
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="cliente_id" class="java.lang.Long">
+		<property name="com.jaspersoft.studio.field.name" value="cliente_id"/>
+		<property name="com.jaspersoft.studio.field.label" value="cliente_id"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="atendimento"/>
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="animal_id" class="java.lang.Long">
+		<property name="com.jaspersoft.studio.field.name" value="animal_id"/>
+		<property name="com.jaspersoft.studio.field.label" value="animal_id"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="atendimento"/>
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="usuario_id" class="java.lang.Long">
+		<property name="com.jaspersoft.studio.field.name" value="usuario_id"/>
+		<property name="com.jaspersoft.studio.field.label" value="usuario_id"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="atendimento"/>
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="atendente_id" class="java.lang.Long">
+		<property name="com.jaspersoft.studio.field.name" value="atendente_id"/>
+		<property name="com.jaspersoft.studio.field.label" value="atendente_id"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="atendimento"/>
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="status" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="status"/>
+		<property name="com.jaspersoft.studio.field.label" value="status"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="atendimento"/>
+		<fieldDescription><![CDATA[Pendente, Execucao, Finalizado, Atrasado, Cancelado]]></fieldDescription>
+	</field>
+	<field name="telefone" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="telefone"/>
+		<property name="com.jaspersoft.studio.field.label" value="telefone"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="atendimento"/>
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="cep" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="cep"/>
+		<property name="com.jaspersoft.studio.field.label" value="cep"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="atendimento"/>
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="rua" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="rua"/>
+		<property name="com.jaspersoft.studio.field.label" value="rua"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="atendimento"/>
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="numero" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="numero"/>
+		<property name="com.jaspersoft.studio.field.label" value="numero"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="atendimento"/>
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="bairro" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="bairro"/>
+		<property name="com.jaspersoft.studio.field.label" value="bairro"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="atendimento"/>
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="complemento" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="complemento"/>
+		<property name="com.jaspersoft.studio.field.label" value="complemento"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="atendimento"/>
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="cidade_codigo" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="cidade_codigo"/>
+		<property name="com.jaspersoft.studio.field.label" value="cidade_codigo"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="atendimento"/>
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="data" class="java.sql.Timestamp">
+		<property name="com.jaspersoft.studio.field.name" value="data"/>
+		<property name="com.jaspersoft.studio.field.label" value="data"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="atendimento"/>
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="observacao" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="observacao"/>
+		<property name="com.jaspersoft.studio.field.label" value="observacao"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="atendimento"/>
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="data_cadastro" class="java.sql.Timestamp">
+		<property name="com.jaspersoft.studio.field.name" value="data_cadastro"/>
+		<property name="com.jaspersoft.studio.field.label" value="data_cadastro"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="atendimento"/>
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="data_atualizacao" class="java.sql.Timestamp">
+		<property name="com.jaspersoft.studio.field.name" value="data_atualizacao"/>
+		<property name="com.jaspersoft.studio.field.label" value="data_atualizacao"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="atendimento"/>
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<columnHeader>
+		<band height="13" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="100" height="13" uuid="fd1063bf-bfc1-4cb0-b71e-b5de6da1bdef">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="0de451df-59c9-4d48-80a1-b9c291092f60"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Cliente]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="120" y="0" width="100" height="13" uuid="fb7ca6be-fa75-436d-9616-17e353c62e77">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="061ee386-f4f3-4d72-8a76-c077d0c8b220"/>
+				</reportElement>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Animal]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="220" y="0" width="162" height="13" uuid="2b33b6d1-66ed-4b38-b808-f01837a17415">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="682c3c3f-69cb-48e7-99ac-168bef695369"/>
+				</reportElement>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Telefone]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="383" y="0" width="100" height="13" uuid="80892deb-0506-4bb9-8575-d46f2eac4ad6">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="a20c8512-454d-47d2-9d9b-82978246605b"/>
+				</reportElement>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Data]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="483" y="0" width="72" height="13" uuid="0e060730-d1d9-48ae-9d99-6959b9178ba1">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="c53e2523-5a13-4093-bbc6-d5007413760f"/>
+				</reportElement>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Situação]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="13" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="100" height="13" uuid="3362e8f8-1d1e-4ee7-a2ba-b55c0d23bb02">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="0de451df-59c9-4d48-80a1-b9c291092f60"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{nomeCli}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="120" y="0" width="100" height="13" uuid="afaede04-7593-4bd5-896d-da9307a1d3d1">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="061ee386-f4f3-4d72-8a76-c077d0c8b220"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{nomeAnimal}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="220" y="0" width="162" height="13" uuid="cbdb70e6-ec67-495b-984c-62353d1c8e30">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="682c3c3f-69cb-48e7-99ac-168bef695369"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{telefone}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="383" y="0" width="100" height="13" uuid="7dcdc51b-456b-47b2-a2cf-0cf8526a613b">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="a20c8512-454d-47d2-9d9b-82978246605b"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{data}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="483" y="0" width="72" height="13" uuid="6908249e-12df-4c41-b5c4-c2ac101f6bf6">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="c53e2523-5a13-4093-bbc6-d5007413760f"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{status} == 0 ? "Pendente": "Finalizado"]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

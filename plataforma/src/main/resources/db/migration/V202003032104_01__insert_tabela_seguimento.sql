@@ -1,0 +1,4 @@
+	INSERT IGNORE INTO seguimento (id, nome, descricao, setor_id) VALUES (1,'Pet Food', 'Segmento de alimentação que inclui desde a simples ração, petiscos até a famosa ração natural.',2);
+	INSERT IGNORE INTO seguimento (id, nome, descricao, setor_id) VALUES (2,'Pet Service', 'Segmento inclui adestramento, hotéis, aplicativos, plano de saúde e até as famosas creches.', 2);
+	INSERT IGNORE INTO seguimento (id, nome, descricao, setor_id) VALUES (3,'Pet Care', 'Segmento que contempla todos os cuidados e mimos que o animal recebe ao longo da vida. Acessórios, produtos de higiene e beleza e equipamentos necessários.', 1);
+	INSERT IGNORE INTO seguimento (id, nome, descricao, setor_id) VALUES (4,'Pet Vet', 'Segmento de consultas veterinárias e medicamentos veterinários.', 3);

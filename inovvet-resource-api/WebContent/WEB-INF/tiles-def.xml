@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tiles-definitions PUBLIC
+"-//Apache Software Foundation//DTD Tiles Configuration 1.3//EN"
+"http://struts.apache.org/dtds/tiles-config_1_3.dtd">
+
+<!-- Passos: definir as partes desejadas para cada Tela -->
+<tiles-definitions>
+	<!-- Definindo o Temaplate -->
+	<definition name="templateDefault" path="/templates/template.jsp">
+		<put name="header" value="/templates/cabecalho.jsp" />
+		<put name="menu" value="/templates/menu.jsp" />
+		<put name="body" value="" />
+	</definition>
+	
+	<!-- Configuradas as partes desejadas para a cada tela -->
+	<definition name=".desktopView" extends="templateDefault">
+	</definition>
+
+	<!-- Configuradas as partes desejadas para a cada tela -->
+	<definition name=".categoriaView" extends="templateDefault">
+		<put name="header" value="/templates/cabecalho.jsp" />
+		<put name="menu" value="/templates/menu.jsp" />
+		<put name="body" value="/paginas/categoria/categoria-formulario.jsp" />
+	</definition>
+	
+	
+	<!-- Configuradas as partes desejadas para a cada tela -->
+	<definition name=".produtoView" extends="templateDefault">
+		<put name="header" value="/templates/cabecalho.jsp" />
+		<put name="menu" value="/templates/menu.jsp" />
+		<put name="body" value="/paginas/produto/produto-formulario.jsp" />
+	</definition>
+	
+	<!-- Configuradas as partes desejadas para a cada tela -->
+	<definition name=".unidadeView" extends="templateDefault">
+		<put name="header" value="/templates/cabecalho.jsp" />
+		<put name="menu" value="/templates/menu.jsp" />
+		<put name="body" value="/paginas/unidade/unidade-formulario.jsp" />
+	</definition>
+	
+	
+
+</tiles-definitions>
