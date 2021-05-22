@@ -28,6 +28,7 @@ Abaixo será demonstrado o objetivo de cada serviço.
   - AWS S3 	
   - JavaMailSender
   - CriteriaBuilder
+  - AuthoritiesExtractorConfig
   
 #### resources-api
 	
