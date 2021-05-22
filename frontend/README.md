@@ -1,4 +1,4 @@
-# [inovvet Sistemas](https://www.inovvet.com.br)[![version][version-badge]][CHANGELOG]
+# [inovvet Sistemas](https://www.inovvet.com.br)
 
 ![alt text](https://res.cloudinary.com/fivesoft/image/upload/v1585709263/site.png "Inovvet")
 
