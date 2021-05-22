@@ -23,8 +23,7 @@ Abaixo será demonstrado o objetivo de cada serviço.
   Serviço responsável por realizar a gestão de segurança através do protocolo OAuth 2	com o fluxo de autorização Resource Owner Password Credentials e Client Credentials
 ### core-api
 	
-  Serviço responsável pela regras de negócio da aplicação em um arquitetura SaaS.
-	- Multitenancy
+  Serviço responsável pela regras de negócio da aplicação em um arquitetura SaaS. Multitenancy
   - AWS S3 	
   - JavaMailSender
   - CriteriaBuilder
@@ -36,17 +35,17 @@ Abaixo será demonstrado o objetivo de cada serviço.
   
 ### front end
     
-   O front end foi desenvolvido com o framework Angular com a suite de componentes do Angular Material.    
-   - Angular Material
-   - SSR(Server side Render)
-   - Fundamentos do angular utilizados
-   	- Router
-   	- Directive
-   	- HttpInterceptor
-   	- Resolvers
-   	- Guard
-   	- HttpClient
-    
+O front end foi desenvolvido com o framework Angular com a suite de componentes do Angular Material.    
+- Angular Material
+- SSR(Server side Render)
+- Fundamentos do angular utilizados
+	- Router
+	- Directive
+	- HttpInterceptor
+	- Resolvers
+	- Guard
+	- HttpClient
+	- ControlValueAccessor 
     
   
   ![](arquitetura.png)
